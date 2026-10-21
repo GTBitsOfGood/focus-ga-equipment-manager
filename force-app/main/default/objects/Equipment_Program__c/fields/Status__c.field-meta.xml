@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pending</fullName>
+                <default>false</default>
+                <label>Pending</label>
+            </value>
+            <value>
+                <fullName>Wait listed</fullName>
+                <default>false</default>
+                <label>Approved - WL</label>
+            </value>
+            <value>
+                <fullName>Denied</fullName>
+                <default>false</default>
+                <label>Denied</label>
+            </value>
+            <value>
+                <fullName>Approved - Funds Released</fullName>
+                <default>false</default>
+                <label>Approved - Funds Released</label>
+            </value>
+            <value>
+                <fullName>Approved_grant</fullName>
+                <default>false</default>
+                <label>Equipment Grant Received</label>
+            </value>
+            <value>
+                <fullName>Approved - LE</fullName>
+                <default>false</default>
+                <label>Equipment LE Received</label>
+            </value>
+            <value>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+                <label>Withdrawn</label>
+            </value>
+            <value>
+                <fullName>Beach Wheelchair</fullName>
+                <default>false</default>
+                <label>Beach Wheelchair</label>
+            </value>
+            <value>
+                <fullName>Equipment Returned</fullName>
+                <default>false</default>
+                <label>Equipment Returned</label>
+            </value>
+            <value>
+                <fullName>Funds Expired</fullName>
+                <default>false</default>
+                <label>Funds Expired</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

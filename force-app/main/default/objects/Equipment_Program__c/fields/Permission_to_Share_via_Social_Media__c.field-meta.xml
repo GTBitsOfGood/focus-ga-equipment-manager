@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Permission_to_Share_via_Social_Media__c</fullName>
+    <inlineHelpText>Field added on 3/1/21 to Equipment Object</inlineHelpText>
+    <label>Permission to Share via Social Media</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>YES_FOCUS_has_permission</fullName>
+                <default>false</default>
+                <label>YES - FOCUS has permission</label>
+            </value>
+            <value>
+                <fullName>NO_Permission_not_granted</fullName>
+                <default>false</default>
+                <label>NO - Permission not granted</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

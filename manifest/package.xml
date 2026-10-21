@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Equipment__c</members>
+        <members>Equipment_Program__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Equipment__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Programs</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Equipment__c-Equipment Layout</members>
+        <members>Equipment_Program__c-Equipment Program Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>EquipmentDashboards</members>
+        <members>EquipmentDashboards/gWkiAaUMemEVfaxEFddnETgYvxVUbS</members>
+        <name>Dashboard</name>
+    </types>
+    <types>
+        <members>Equipment</members>
+        <members>Equipment/Equipment_List_v0w</members>
+        <members>Equipment/Equipment_Program_w_Equipment_Jan</members>
+        <members>Equipment/Equipment_Status_Out_bNF</members>
+        <members>Equipment/Equipment_Status_Inventory_6nB</members>
+        <members>Equipment/Equipment_Summary_4Mf</members>
+        <name>Report</name>
+    </types>
+    <types>
+        <members>Equipment_Manager</members>
+        <name>PermissionSet</name>
+    </types>
+    <version>67.0</version>
+</Package>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Campaign_for_Loaned_Equipment</fullName>
+    <active>true</active>
+    <description>This rule requires the selection of a Loaned Equipment Campaign when a user notes that the Equipment Program is for Loaned Equipment. This validation helps the associated Flow run that ties the Equipment Program and its Opportunity to the Campaign.</description>
+    <errorConditionFormula>AND(ISPICKVAL( Is_this_for_loaned_equipment__c , &quot;Yes&quot;), ( Related_Loaned_Equip_Campaign__c = &quot;&quot;))</errorConditionFormula>
+    <errorDisplayField>Related_Loaned_Equip_Campaign__c</errorDisplayField>
+    <errorMessage>If the Equipment Program is for Loaned Equipment it must be related to a Loaned Equipment Campaign.</errorMessage>
+</ValidationRule>
