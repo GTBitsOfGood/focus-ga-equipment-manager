@@ -2,6 +2,18 @@
 
 This repository contains the Salesforce sandbox configuration files for the equipment manager implemented in FOCUS's Salesforce. 
 
+## Development Workflow
+
+Here's a quick flow of what our Salesforce development workflow looks like:
+
+1. GitHub main as source of truth
+2. Deploy/push main to your Salesforce Sandbox w/ sf cli
+3. Make changes and test in your Salesforce Sandbox
+4. Pull/retrieve your Sandbox changes into a new branch w/ sf cli and git
+5. Open PR in GitHub and review metadata changes
+6. Merge PR into main
+7. Redeploy updated main into Sandbox and other orgs (other sandboxes)
+
 ## Push this repo to your Salesforce Sandbox
 
 1. Install the [Salesforce CLI](google.com/search?q=salesforce+cli&oq=salesforce+cli&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgcIARAAGIAEMgcIAhAAGIAEMgoIAxAAGIAEGLQHMgcIBBAAGIAEMgYIBRBFGD0yBggGEEUYPDIGCAcQRRg80gEIMTc5OWowajeoAgCwAgA&sourceid=chrome&source=chrome.ob&ie=UTF-8) locally 
