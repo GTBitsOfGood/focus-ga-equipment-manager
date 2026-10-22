@@ -28,7 +28,9 @@ This repository contains the Salesforce sandbox configuration files for the equi
 
     `sf org open --target-org dev-sandbox`
 
-Note: this deployes the Salesforce configuration metadata (objects, fields, layouts, reports, dashboards, etc.), not data recoords. You must create these yourself to test. Also, your sanddbox should already have the previous dependenceis. 
+Note: this deployes the Salesforce configuration metadata (objects, fields, layouts, reports, dashboards, etc.), not data recoords. You must create these yourself to test. Also, your sandbox should already have the previous dependenceis. 
+
+Git branches provide version control, but separate Salesforce Sandboxes are not branch-specific. Deploying multiple branches to the same Sandbox can result in a mix of changes. Deployments do not remove metadata from previous branches. 
 
 ## Pull your sandbox changes to your branch on this repo
 
@@ -62,4 +64,3 @@ Note: this deployes the Salesforce configuration metadata (objects, fields, layo
 6. Push your branch to GitHub
 
 7. Open a PR into `main`
-
