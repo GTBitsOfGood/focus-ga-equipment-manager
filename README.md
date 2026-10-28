@@ -28,19 +28,24 @@ Here's a quick flow of what our Salesforce development workflow looks like:
 
     `sf org list`
 
-5. Preview this repo's metadata changes before deploying to your sandbox:
+5. Enable source tracking in your sandbox. In the sandbox, go to Setup > Sandbox Settings and click **Enable Source Tracking in This Sandbox**, then run:
+
+    `sf org enable tracking --target-org dev-sandbox`
+
+
+7. Preview this repo's metadata changes before deploying to your sandbox:
 
     `sf project deploy preview --manifest manifest/package.xml --target-org dev-sandbox`
 
-6. Deploy this repo's metadata to your sandbox
+8. Deploy this repo's metadata to your sandbox
 
     `sf project deploy start --manifest manifest/package.xml --target-org dev-sandbox`
 
-7. Verify the changes in your sandbox:
+9. Verify the changes in your sandbox:
 
     `sf org open --target-org dev-sandbox`
 
-Note: this deployes the Salesforce configuration metadata (objects, fields, layouts, reports, dashboards, etc.), not data recoords. You must create these yourself to test. Also, your sandbox should already have the previous dependenceis. 
+Note: this deploys Salesforce configuration metadata (objects, fields, layouts, reports, dashboards, etc.), not data records. You must create these yourself to test. If a sandbox is too far out of date or is missing dependencies, preserve any work, refresh it, re-enable source tracking, and deploy the latest `main` again.
 
 Git branches provide version control, but separate Salesforce Sandboxes are not branch-specific. Deploying multiple branches to the same Sandbox can result in a mix of changes. Deployments do not remove metadata from previous branches. 
 
@@ -58,13 +63,22 @@ Git branches provide version control, but separate Salesforce Sandboxes are not 
 
     `sf org list`
 
-3. Retrieve the latest metadata from your sandbox using the manifest:
+3. If source tracking was enabled before you made your changes, preview and retrieve only the changed metadata:
+
+    ```
+    sf project retrieve preview --target-org dev-sandbox --concise
+    sf project retrieve start --target-org dev-sandbox
+    ```
+
+4. If source tracking was enabled after the changes were made, retrieve the metadata in the manifest instead:
 
     `sf project retrieve start --manifest manifest/package.xml --target-org dev-sandbox`
 
-4. Review changes w/ `git status`
+    Add components to `manifest/package.xml` if your changes are not already represented there.
 
-5. Stage and commit:
+5. Review changes w/ `git status` and `git diff`
+
+6. Stage and commit:
 
     ```
     git add force-app
@@ -73,6 +87,6 @@ Git branches provide version control, but separate Salesforce Sandboxes are not 
 
     Use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for your commit messages. 
 
-6. Push your branch to GitHub
+7. Push your branch to GitHub
 
-7. Open a PR into `main`
+8. Open a PR into `main`

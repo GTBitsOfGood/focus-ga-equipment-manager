@@ -9,7 +9,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>In</value>
+            <value>Ready for Checkout</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>
@@ -19,7 +19,7 @@
         <field>Equipment__c.Status__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Equipment - Status: In</name>
+    <name>Equipment - Ready for Checkout</name>
     <params>
         <name>co</name>
         <value>1</value>

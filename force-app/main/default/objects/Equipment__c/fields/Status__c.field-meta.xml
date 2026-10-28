@@ -10,19 +10,29 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>In</fullName>
-                <default>false</default>
-                <label>In</label>
+                <fullName>Ready for Checkout</fullName>
+                <default>true</default>
+                <label>Ready for Checkout</label>
             </value>
             <value>
                 <fullName>Out</fullName>
                 <default>false</default>
-                <label>Out</label>
+                <label>Out In Community</label>
             </value>
             <value>
-                <fullName>Inventory</fullName>
+                <fullName>Checkout Pending</fullName>
                 <default>false</default>
-                <label>Inventory</label>
+                <label>Checkout Pending</label>
+            </value>
+            <value>
+                <fullName>Repair</fullName>
+                <default>false</default>
+                <label>Repair</label>
+            </value>
+            <value>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+                <label>Inactive</label>
             </value>
         </valueSetDefinition>
     </valueSet>

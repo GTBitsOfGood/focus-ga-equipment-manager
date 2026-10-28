@@ -19,7 +19,7 @@
         <field>Equipment__c.Status__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Equipment - Status: Out</name>
+    <name>Equipment - Out In Community</name>
     <params>
         <name>co</name>
         <value>1</value>
