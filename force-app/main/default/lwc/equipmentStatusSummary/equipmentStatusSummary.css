@@ -1,0 +1,50 @@
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.kpi-card {
+    background: #ffffff;
+    border: 1px solid #d1d1d1;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    min-width: 0;
+}
+
+.kpi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.kpi-label {
+    font-size: 1rem;
+    color: #666666;
+}
+
+.kpi-count {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #2e2e2e;
+    margin-top: 1rem;
+    line-height: 1.2;
+}
+
+.loading-container {
+    position: relative;
+    min-height: 6rem;
+}
+
+@media (max-width: 900px) {
+    .kpi-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
