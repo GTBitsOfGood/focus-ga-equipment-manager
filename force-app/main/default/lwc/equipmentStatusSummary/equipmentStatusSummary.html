@@ -18,12 +18,17 @@
             <div class="kpi-grid">
                 <template for:each={statuses} for:item="item">
                     <div key={item.status} class="kpi-card">
-                        <div class="kpi-count">
-                            {item.count}
+                        <div class="kpi-header">
+                            <span class="kpi-label">{item.label}</span>
+                            <lightning-icon
+                                icon-name={item.icon}
+                                size="small"
+                                alternative-text={item.label}
+                                class="kpi-icon">
+                            </lightning-icon>
                         </div>
-                        <div class="kpi-label">
-                            {item.label}
-                        </div>
+                
+                        <div class="kpi-count">{item.count}</div>
                     </div>
                 </template>
             </div>
