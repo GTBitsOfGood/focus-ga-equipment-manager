@@ -1,0 +1,33 @@
+<template>
+    <section class="slds-var-m-bottom_medium" aria-label="Equipment status summary">
+
+        <template lwc:if={isLoading}>
+            <div class="loading-container">
+                <lightning-spinner alternative-text="Loading equipment counts" size="small">
+                </lightning-spinner>
+            </div>
+        </template>
+
+        <template lwc:elseif={errorMessage}>
+            <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+                <span>{errorMessage}</span>
+            </div>
+        </template>
+
+        <template lwc:else>
+            <div class="kpi-grid">
+                <template for:each={statuses} for:item="item">
+                    <div key={item.status} class="kpi-card">
+                        <div class="kpi-count">
+                            {item.count}
+                        </div>
+                        <div class="kpi-label">
+                            {item.label}
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+    </section>
+</template>
