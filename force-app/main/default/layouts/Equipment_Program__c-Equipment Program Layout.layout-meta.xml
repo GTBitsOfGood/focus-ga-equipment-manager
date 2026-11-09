@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>GenerateKnowledge</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -97,6 +98,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Related_Loaned_Equip_Campaign__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Equipment__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
