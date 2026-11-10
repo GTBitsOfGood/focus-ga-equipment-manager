@@ -17,11 +17,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Equipment__c.Equipment_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Equipment__c.Purchase_Price__c</field>
         <readable>true</readable>
     </fieldPermissions>
