@@ -1,3 +1,4 @@
+
 import { LightningElement, wire } from 'lwc';
 
 import getStatusCounts from
@@ -12,8 +13,6 @@ export default class EquipmentStatusSummary
 
     @wire(getStatusCounts)
     wiredStatusCounts({ data, error }) {
-        this.isLoading = false;
-
         if (data) {
             const icons = {
                 'Ready for Checkout': {
@@ -47,10 +46,12 @@ export default class EquipmentStatusSummary
             }));
 
             this.errorMessage = undefined;
+            this.isLoading = false;
         } else if (error) {
             this.statuses = [];
             this.errorMessage =
                 'Unable to load equipment counts. Please try again later.';
+            this.isLoading = false;
         }
     }
 }
