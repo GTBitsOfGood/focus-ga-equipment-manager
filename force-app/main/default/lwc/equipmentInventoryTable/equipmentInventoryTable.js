@@ -4,6 +4,9 @@ import getEquipmentRecords from "@salesforce/apex/EquipmentInventoryController.g
 const DEFAULT_SORT_BY = "Name";
 const DEFAULT_SORT_DIRECTION = "asc";
 const DISPLAY_SORT_BY = "recordUrl";
+const STATUS_LABELS = {
+  Out: "Out In Community"
+};
 
 export default class EquipmentInventoryTable extends LightningElement {
   _filters = {
@@ -116,7 +119,8 @@ export default class EquipmentInventoryTable extends LightningElement {
     if (data) {
       this._records = (data.records || []).map((record) => ({
         ...record,
-        recordUrl: `/lightning/r/Equipment__c/${record.Id}/view`
+        recordUrl: `/lightning/r/Equipment__c/${record.Id}/view`,
+        statusLabel: STATUS_LABELS[record.Status__c] || record.Status__c
       }));
       this._totalCount = data.totalCount || 0;
       this._error = undefined;
@@ -151,7 +155,12 @@ export default class EquipmentInventoryTable extends LightningElement {
       },
       { label: "Size", fieldName: "Size__c", type: "text", sortable: true },
       { label: "Color", fieldName: "Color__c", type: "text", sortable: true },
-      { label: "Status", fieldName: "Status__c", type: "text", sortable: true },
+      {
+        label: "Status",
+        fieldName: "statusLabel",
+        type: "text",
+        sortable: true
+      },
       {
         label: "Accessories",
         fieldName: "Accessories__c",
@@ -206,6 +215,10 @@ export default class EquipmentInventoryTable extends LightningElement {
   mapSortField(fieldName) {
     if (!fieldName || fieldName === "recordUrl") {
       return "Name";
+    }
+
+    if (fieldName === "statusLabel") {
+      return "Status__c";
     }
 
     return fieldName;

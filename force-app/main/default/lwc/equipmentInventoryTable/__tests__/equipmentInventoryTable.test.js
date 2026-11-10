@@ -56,6 +56,7 @@ describe("c-equipment-inventory-table", () => {
     expect(datatable.data[0].recordUrl).toBe(
       "/lightning/r/Equipment__c/a00123456789ABC/view"
     );
+    expect(datatable.data[1].statusLabel).toBe("Checked Out");
     expect(element.totalCount).toBe(2);
     expect(element.shadowRoot.querySelector(".slds-theme_error")).toBeNull();
   });
@@ -114,5 +115,30 @@ describe("c-equipment-inventory-table", () => {
     expect(element.sortFieldForApex).toBe("Name");
     expect(element.sortDirection).toBe("desc");
     expect(element.mapSortField("recordUrl")).toBe("Name");
+    expect(element.mapSortField("statusLabel")).toBe("Status__c");
+  });
+
+  it("displays the Out API value as Out In Community", async () => {
+    const element = createElement("c-equipment-inventory-table", {
+      is: EquipmentInventoryTable
+    });
+
+    document.body.appendChild(element);
+
+    getEquipmentRecords.emit({
+      records: [
+        {
+          Id: "a00123456789OUT",
+          Name: "Community Equipment",
+          Status__c: "Out"
+        }
+      ],
+      totalCount: 1
+    });
+    await Promise.resolve();
+
+    const datatable = element.shadowRoot.querySelector("lightning-datatable");
+    expect(datatable.data[0].Status__c).toBe("Out");
+    expect(datatable.data[0].statusLabel).toBe("Out In Community");
   });
 });
