@@ -20,14 +20,13 @@
                     <div key={item.status} class="kpi-card">
                         <div class="kpi-header">
                             <span class="kpi-label">{item.label}</span>
-                            <lightning-icon
-                                icon-name={item.icon}
-                                size="small"
-                                alternative-text={item.label}
-                                class="kpi-icon">
-                            </lightning-icon>
+
+                            <span class={item.iconClass}>
+                                <lightning-icon icon-name={item.icon} size="x-small" alternative-text={item.label}>
+                                </lightning-icon>
+                            </span>
                         </div>
-                
+
                         <div class="kpi-count">{item.count}</div>
                     </div>
                 </template>
