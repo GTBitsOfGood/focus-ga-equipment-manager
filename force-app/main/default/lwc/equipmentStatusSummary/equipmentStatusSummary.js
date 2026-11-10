@@ -14,18 +14,36 @@ export default class EquipmentStatusSummary
     wiredStatusCounts({ data, error }) {
         this.isLoading = false;
 
-        if (data) {   
+        if (data) {
             const icons = {
-                'Ready for Checkout': 'utility:check',
-                'Checkout Pending': 'utility:add',
-                'Out': 'utility:money',
-                'Repair': 'utility:settings',
-                'Inactive': 'utility:notification'
+                'Ready for Checkout': {
+                    icon: 'utility:file',
+                    iconClass: 'icon-circle icon-ready'
+                },
+                'Checkout Pending': {
+                    icon: 'utility:add',
+                    iconClass: 'icon-circle icon-pending'
+                },
+                'Out': {
+                    icon: 'utility:money',
+                    iconClass: 'icon-circle icon-out'
+                },
+                'Repair': {
+                    icon: 'utility:copy',
+                    iconClass: 'icon-circle icon-repair'
+                },
+                'Inactive': {
+                    icon: 'utility:notification',
+                    iconClass: 'icon-circle icon-inactive'
+                }
             };
-            
+
             this.statuses = data.map(item => ({
                 ...item,
-                icon: icons[item.status] || 'utility:info'
+                ...(icons[item.status] || {
+                    icon: 'utility:info',
+                    iconClass: 'icon-circle'
+                })
             }));
 
             this.errorMessage = undefined;
