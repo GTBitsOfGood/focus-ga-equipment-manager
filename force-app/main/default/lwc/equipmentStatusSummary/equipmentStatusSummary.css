@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 1rem;
+    width: 100%;
 }
 
 .kpi-card {
@@ -45,6 +46,79 @@
 
 @media (max-width: 600px) {
     .kpi-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
     }
+
+    .kpi-card {
+        padding: 1rem;
+    }
+
+    .kpi-header {
+        gap: 0.75rem;
+    }
+
+    .kpi-label {
+        overflow-wrap: break-word;
+        min-width: 0;
+    }
+
+    .kpi-count {
+        font-size: 2rem;
+        margin-top: 0.75rem;
+    }
+
+    .icon-circle {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+.icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.icon-ready {
+    background: #dcfce7;
+}
+
+.icon-pending {
+    background: #fef3c7;
+}
+
+.icon-out {
+    background: #dbeafe;
+}
+
+.icon-repair {
+    background: #fee2e2;
+}
+
+.icon-inactive {
+    background: #f3f4f6;
+}
+
+.icon-ready lightning-icon {
+    --slds-c-icon-color-foreground-default: #15803d;
+}
+
+.icon-pending lightning-icon {
+    --slds-c-icon-color-foreground-default: #a16207;
+}
+
+.icon-out lightning-icon {
+    --slds-c-icon-color-foreground-default: #2563eb;
+}
+
+.icon-repair lightning-icon {
+    --slds-c-icon-color-foreground-default: #dc2626;
+}
+
+.icon-inactive lightning-icon {
+    --slds-c-icon-color-foreground-default: #4b5563;
 }
