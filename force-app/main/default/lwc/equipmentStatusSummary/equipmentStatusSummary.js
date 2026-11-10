@@ -14,7 +14,7 @@ export default class EquipmentStatusSummary
     wiredStatusCounts({ data, error }) {
         this.isLoading = false;
 
-        if (data) {   
+        if (data) {
             const icons = {
                 'Ready for Checkout': 'utility:check',
                 'Checkout Pending': 'utility:add',
@@ -22,7 +22,7 @@ export default class EquipmentStatusSummary
                 'Repair': 'utility:settings',
                 'Inactive': 'utility:notification'
             };
-            
+
             this.statuses = data.map(item => ({
                 ...item,
                 icon: icons[item.status] || 'utility:info'

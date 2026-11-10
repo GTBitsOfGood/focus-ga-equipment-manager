@@ -9,11 +9,11 @@ public with sharing class EquipmentInventoryController {
         'purchase_price__c' => 'Purchase_Price__c'
     };
     private static final String FIELDS =
-        'Id, Name, Equipment_ID__c, Size__c, Color__c, Status__c,' + 
+        'Id, Name, Equipment_ID__c, Size__c, Color__c, Status__c,' +
         'Accessories__c, Date_Purchased__c, Purchase_Price__c';
     public class EquipmentPage {
         @AuraEnabled public List<Equipment__c> records;
-        @AuraEnabled public Integer totalCount; 
+        @AuraEnabled public Integer totalCount;
     }
     @AuraEnabled(cacheable=true)
     public static EquipmentPage getEquipmentRecords(

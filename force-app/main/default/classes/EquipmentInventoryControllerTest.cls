@@ -12,7 +12,7 @@
  * coverage, and prevent regressions. All Apex classes are
  * required to have at least 75% code coverage in order to be deployed
  * to a production org. In addition, all triggers must have some code coverage.
- * 
+ *
  * The @isTest class annotation indicates this class only contains test
  * methods. Classes defined with the @isTest annotation do not count against
  * the org size limit for all Apex scripts.
@@ -25,11 +25,11 @@ private class EquipmentInventoryControllerTest {
     @TestSetup
     static void setup(){
         insert new List<Equipment__c>{
-            new Equipment__c(Name = 'Kendeda Wheelchair', Equipment_ID__c = '1', Status__c = 'In', Size__c = 14, Color__c = 'Red',  Purchase_Price__c = 100),
+            new Equipment__c(Name = 'Kendeda Wheelchair', Equipment_ID__c = '1', Status__c = 'Ready for Checkout', Size__c = 14, Color__c = 'Red',  Purchase_Price__c = 100),
             new Equipment__c(Name = 'Klaus Stroller', Equipment_ID__c = '2', Status__c = 'Out', Size__c = 20, Color__c = 'Blue', Purchase_Price__c = 300),
-            new Equipment__c(Name = 'Scheller Mobility Scooter', Equipment_ID__c = '3', Status__c = 'Inventory',    Size__c = 12, Color__c = 'Green', Purchase_Price__c = 200),
+            new Equipment__c(Name = 'Scheller Mobility Scooter', Equipment_ID__c = '3', Status__c = 'Repair', Size__c = 12, Color__c = 'Green', Purchase_Price__c = 200),
             new Equipment__c(Name = 'Gilbert Beach Wheelchair', Equipment_ID__c = '4', Status__c = 'Out', Size__c = 18, Color__c = 'Black', Purchase_Price__c = 400),
-            new Equipment__c(Name = 'Lewis Looper', Equipment_ID__c = '5', Status__c = 'In', Size__c = 12, Color__c = 'White',  Purchase_Price__c = 50)
+            new Equipment__c(Name = 'Lewis Looper', Equipment_ID__c = '5', Status__c = 'Ready for Checkout', Size__c = 12, Color__c = 'White',  Purchase_Price__c = 50)
         };
     }
 
@@ -75,8 +75,8 @@ private class EquipmentInventoryControllerTest {
     }
 
     @isTest static void filtersWorkTogether() {
-        Assert.areEqual(2, run(null, 'In', null, null, null, null, null, null).totalCount);
-        EquipmentInventoryController.EquipmentPage p = run(null, 'In', null, 'White', null, null, null, null);
+        Assert.areEqual(2, run(null, 'Ready for Checkout', null, null, null, null, null, null).totalCount);
+        EquipmentInventoryController.EquipmentPage p = run(null, 'Ready for Checkout', null, 'White', null, null, null, null);
         Assert.areEqual(1, p.totalCount);
         Assert.areEqual('Lewis Looper', p.records[0].Name);
     }

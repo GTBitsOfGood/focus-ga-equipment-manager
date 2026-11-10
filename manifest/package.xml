@@ -7,6 +7,7 @@
     </types>
     <types>
         <members>Equipment__c</members>
+        <members>Equipment_Dashboard</members>
         <name>CustomTab</name>
     </types>
     <types>
@@ -37,7 +38,18 @@
         <name>PermissionSet</name>
     </types>
     <types>
+        <members>EquipmentInventoryController</members>
+        <members>EquipmentInventoryControllerTest</members>
+        <members>EquipmentStatusController</members>
+        <members>EquipmentStatusControllerTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
         <members>annualFollowUp</members>
+        <members>equipmentDashboard</members>
+        <members>equipmentDashboardFilters</members>
+        <members>equipmentInventoryTable</members>
+        <members>equipmentStatusSummary</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
