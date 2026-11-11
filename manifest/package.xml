@@ -7,6 +7,7 @@
     </types>
     <types>
         <members>Equipment__c</members>
+        <members>Equipment_Dashboard</members>
         <name>CustomTab</name>
     </types>
     <types>
@@ -19,8 +20,8 @@
         <name>Layout</name>
     </types>
     <types>
-        <members>EquipmentDashboards</members>
-        <members>EquipmentDashboards/gWkiAaUMemEVfaxEFddnETgYvxVUbS</members>
+        <members>CompanyDashboards/EquipmentDashboards</members>
+        <members>CompanyDashboards/EquipmentDashboards/gWkiAaUMemEVfaxEFddnETgYvxVUbS</members>
         <name>Dashboard</name>
     </types>
     <types>
@@ -35,6 +36,33 @@
     <types>
         <members>Equipment_Manager</members>
         <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>EquipmentInventoryController</members>
+        <members>EquipmentInventoryControllerTest</members>
+        <members>EquipmentStatusController</members>
+        <members>EquipmentStatusControllerTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>annualFollowUp</members>
+        <members>equipmentDashboard</members>
+        <members>equipmentDashboardFilters</members>
+        <members>equipmentInventoryTable</members>
+        <members>equipmentStatusSummary</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>Equipment_Program_Record_Page</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>Equipment_Program_Annual_Follow_Up_Email</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>Equipment_Program__c.Annual_Follow_Ups_Required</members>
+        <name>ListView</name>
     </types>
     <version>67.0</version>
 </Package>

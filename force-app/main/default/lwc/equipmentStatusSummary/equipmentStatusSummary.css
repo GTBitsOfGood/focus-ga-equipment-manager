@@ -1,0 +1,122 @@
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
+
+.kpi-card {
+    background: #ffffff;
+    border: 1px solid #d1d1d1;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    min-width: 0;
+}
+
+.kpi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.kpi-label {
+    font-size: 1rem;
+    color: #666666;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+.kpi-count {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #2e2e2e;
+    margin-top: 1rem;
+    line-height: 1.2;
+}
+
+.loading-container {
+    position: relative;
+    min-height: 6rem;
+}
+
+.icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.icon-ready {
+    background: #dcfce7;
+}
+
+.icon-pending {
+    background: #fef3c7;
+}
+
+.icon-out {
+    background: #dbeafe;
+}
+
+.icon-repair {
+    background: #fee2e2;
+}
+
+.icon-inactive {
+    background: #f3f4f6;
+}
+
+.icon-ready lightning-icon {
+    --slds-c-icon-color-foreground-default: #15803d;
+}
+
+.icon-pending lightning-icon {
+    --slds-c-icon-color-foreground-default: #a16207;
+}
+
+.icon-out lightning-icon {
+    --slds-c-icon-color-foreground-default: #2563eb;
+}
+
+.icon-repair lightning-icon {
+    --slds-c-icon-color-foreground-default: #dc2626;
+}
+
+.icon-inactive lightning-icon {
+    --slds-c-icon-color-foreground-default: #4b5563;
+}
+
+@media (max-width: 900px) {
+    .kpi-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kpi-card {
+        padding: 1rem;
+    }
+
+    .kpi-header {
+        gap: 0.75rem;
+    }
+
+    .kpi-count {
+        font-size: 2rem;
+        margin-top: 0.75rem;
+    }
+
+    .icon-circle {
+        width: 2rem;
+        height: 2rem;
+    }
+}
