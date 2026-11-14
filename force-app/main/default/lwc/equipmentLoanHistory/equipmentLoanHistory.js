@@ -65,7 +65,8 @@ export default class EquipmentLoanHistory extends LightningElement {
         typeAttributes: {
           label: { fieldName: "childName" },
           target: "_self"
-        }
+        },
+        hideDefaultActions: true
       },
       {
         label: "Equipment Program",
@@ -74,22 +75,26 @@ export default class EquipmentLoanHistory extends LightningElement {
         typeAttributes: {
           label: { fieldName: "programName" },
           target: "_self"
-        }
+        },
+        hideDefaultActions: true
       },
       {
         label: "Funds Released Date",
         fieldName: "fundsReleasedDate",
-        type: "date-local"
+        type: "date-local",
+        hideDefaultActions: true
       },
       {
         label: "Delivered Date",
         fieldName: "deliveredDate",
-        type: "date-local"
+        type: "date-local",
+        hideDefaultActions: true
       },
       {
         label: "Status",
         fieldName: "status",
-        type: "text"
+        type: "text",
+        hideDefaultActions: true
       }
     ];
   }
