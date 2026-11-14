@@ -1,0 +1,58 @@
+
+<template>
+    <div class="slds-p-around_medium">
+        <h1 class="slds-text-heading_large slds-m-bottom_small">
+            Equipment Loan History
+        </h1>
+
+        <!-- Selected equipment information -->
+        <template lwc:if={equipment}>
+            <div class="slds-m-bottom_large">
+                <a href={equipment.recordUrl}>
+                    {equipment.name} - {equipment.equipmentId}
+                </a>
+            </div>
+        </template>
+
+        <article class="slds-card">
+            <div class="slds-card__body slds-card__body_inner">
+
+                <!-- Loading state -->
+                <template lwc:if={isLoading}>
+                    <lightning-spinner
+                        alternative-text="Loading loan history"
+                        size="medium">
+                    </lightning-spinner>
+                </template>
+
+                <!-- Error state -->
+                <template lwc:elseif={errorMessage}>
+                    <div
+                        class="slds-notify slds-notify_alert slds-theme_error"
+                        role="alert">
+                        <span>{errorMessage}</span>
+                    </div>
+                </template>
+
+                <!-- Empty state -->
+                <template lwc:elseif={isEmpty}>
+                    <p class="slds-p-around_medium">
+                        No loan history found for this equipment.
+                    </p>
+                </template>
+
+                <!-- Loan history table -->
+                <template lwc:else>
+                    <lightning-datatable
+                        key-field="id"
+                        data={loanHistory}
+                        columns={columns}
+                        hide-checkbox-column
+                        resize-column-disabled>
+                    </lightning-datatable>
+                </template>
+
+            </div>
+        </article>
+    </div>
+</template>
