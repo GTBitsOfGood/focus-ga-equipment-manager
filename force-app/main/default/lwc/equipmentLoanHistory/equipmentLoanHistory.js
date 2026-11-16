@@ -1,121 +1,132 @@
 
 import { LightningElement, api, wire } from "lwc";
 import { CurrentPageReference } from "lightning/navigation";
+import getLoanHistory from "@salesforce/apex/LoanHistoryController.getLoanHistory";
 
-const MOCK_LOANS = [
+const COLUMNS = [
   {
-    Id: "a01000000000001AAA",
-    Name: "EP-1002",
-    Child_In_Need__c: "a02000000000001AAA",
-    Child_In_Need__r: { Name: "Alex Smith" },
-    Funds_Released_Date__c: "2026-05-15",
-    Delivered_Date__c: "2026-05-20",
-    Status__c: "Delivered"
+    label: "Child's Name",
+    fieldName: "childUrl",
+    type: "url",
+    typeAttributes: {
+      label: { fieldName: "childName" },
+      target: "_self"
+    },
+    hideDefaultActions: true
   },
   {
-    Id: "a01000000000002AAA",
-    Name: "EP-1001",
-    Child_In_Need__c: "a02000000000002AAA",
-    Child_In_Need__r: { Name: "Jamie Lee" },
-    Funds_Released_Date__c: "2025-03-10",
-    Delivered_Date__c: "2025-03-18",
-    Status__c: "Equipment Returned"
+    label: "Equipment Program",
+    fieldName: "programUrl",
+    type: "url",
+    typeAttributes: {
+      label: { fieldName: "programName" },
+      target: "_self"
+    },
+    hideDefaultActions: true
+  },
+  {
+    label: "Funds Released Date",
+    fieldName: "fundsReleasedDate",
+    type: "date-local",
+    hideDefaultActions: true
+  },
+  {
+    label: "Delivered Date",
+    fieldName: "deliveredDate",
+    type: "date-local",
+    hideDefaultActions: true
+  },
+  {
+    label: "Status",
+    fieldName: "status",
+    type: "text",
+    hideDefaultActions: true
   }
 ];
 
 export default class EquipmentLoanHistory extends LightningElement {
   @api recordId;
 
-  equipmentId;
-  isLoading = false;
-  errorMessage;
+  pageEquipmentId;
+  equipment = null;
   loanHistory = [];
+  errorMessage = null;
+  hasResponse = false;
+
+  columns = COLUMNS;
 
   @wire(CurrentPageReference)
   getPageReference(pageReference) {
-    if (pageReference) {
-      this.equipmentId =
-        pageReference.state?.c__equipmentId ||
-        this.recordId;
+    const nextId = pageReference?.state?.c__equipmentId;
+
+    if (this.pageEquipmentId !== nextId) {
+      this.pageEquipmentId = nextId;
+      this.hasResponse = false;
+      this.equipment = null;
+      this.loanHistory = [];
+      this.errorMessage = null;
     }
   }
 
-  connectedCallback() {
-    this.loanHistory = this.formatLoans(MOCK_LOANS);
+  get selectedEquipmentId() {
+    return this.pageEquipmentId || this.recordId;
   }
 
-  get equipment() {
-    if (!this.equipmentId) {
-      return null;
+  @wire(getLoanHistory, { equipmentId: "$selectedEquipmentId" })
+  wiredLoanHistory({ data, error }) {
+    if (data) {
+      this.equipment = {
+        name: data.equipment?.name || "",
+        equipmentId:
+          data.equipment?.equipmentNumber ||
+          data.equipment?.id ||
+          "",
+        recordUrl: data.equipment?.id
+          ? `/lightning/r/Equipment__c/${data.equipment.id}/view`
+          : null
+      };
+
+      this.loanHistory = this.formatLoans(data.rows);
+      this.errorMessage = null;
+      this.hasResponse = true;
+    } else if (error) {
+      this.equipment = null;
+      this.loanHistory = [];
+      this.errorMessage =
+        error.body?.message ||
+        "Unable to load equipment loan history.";
+      this.hasResponse = true;
     }
-
-    return {
-      name: "Sample Equipment",
-      equipmentId: "EQ-001",
-      recordUrl: `/lightning/r/Equipment__c/${this.equipmentId}/view`
-    };
-  }
-
-  get columns() {
-    return [
-      {
-        label: "Child's Name",
-        fieldName: "childUrl",
-        type: "url",
-        typeAttributes: {
-          label: { fieldName: "childName" },
-          target: "_self"
-        },
-        hideDefaultActions: true
-      },
-      {
-        label: "Equipment Program",
-        fieldName: "programUrl",
-        type: "url",
-        typeAttributes: {
-          label: { fieldName: "programName" },
-          target: "_self"
-        },
-        hideDefaultActions: true
-      },
-      {
-        label: "Funds Released Date",
-        fieldName: "fundsReleasedDate",
-        type: "date-local",
-        hideDefaultActions: true
-      },
-      {
-        label: "Delivered Date",
-        fieldName: "deliveredDate",
-        type: "date-local",
-        hideDefaultActions: true
-      },
-      {
-        label: "Status",
-        fieldName: "status",
-        type: "text",
-        hideDefaultActions: true
-      }
-    ];
   }
 
   formatLoans(records) {
     return (records || []).map((record) => ({
-      id: record.Id,
-      childName: record.Child_In_Need__r?.Name || "",
-      childUrl: record.Child_In_Need__c
-        ? `/lightning/r/Child_In_Need__c/${record.Child_In_Need__c}/view`
+      id: record.programId,
+      childName: record.childName || "",
+      childUrl: record.childId
+        ? `/lightning/r/Contact/${record.childId}/view`
         : null,
-      programName: record.Name || "",
-      programUrl: `/lightning/r/Equipment_Program__c/${record.Id}/view`,
-      fundsReleasedDate: record.Funds_Released_Date__c || null,
-      deliveredDate: record.Delivered_Date__c || null,
-      status: record.Status__c || ""
+      programName: record.programName || "",
+      programUrl: record.programId
+        ? `/lightning/r/Equipment_Program__c/${record.programId}/view`
+        : null,
+      fundsReleasedDate: record.fundsReleasedDate || null,
+      deliveredDate: record.deliveredDate || null,
+      status: record.status || ""
     }));
+  }
+
+  get isLoading() {
+    return Boolean(this.selectedEquipmentId) && !this.hasResponse;
+  }
+
+  get noEquipmentSelected() {
+    return !this.selectedEquipmentId;
   }
 
   get isEmpty() {
     return (
+      !this.noEquipmentSelected &&
       !this.isLoading &&
       !this.errorMessage &&
       this.loanHistory.length === 0
