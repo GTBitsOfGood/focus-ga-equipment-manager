@@ -18,7 +18,13 @@
             <div class="slds-card__body slds-card__body_inner">
 
                 <!-- Loading state -->
-                <template lwc:if={isLoading}>
+                <template lwc:if={noEquipmentSelected}>
+                    <p class="slds-p-around_medium">
+                        Select an equipment record to view its loan history.
+                    </p>
+                </template>
+
+                <template lwc:elseif={isLoading}>
                     <lightning-spinner
                         alternative-text="Loading loan history"
                         size="medium">
