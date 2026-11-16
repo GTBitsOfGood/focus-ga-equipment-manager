@@ -172,8 +172,6 @@
     </dashboardGridLayout>
     <dashboardType>SpecifiedUser</dashboardType>
     <isGridLayout>true</isGridLayout>
-    <owner>joshforden@gatech.edu</owner>
-    <runningUser>joshforden@gatech.edu</runningUser>
     <textColor>#000000</textColor>
     <title>Equiptment Ddashboard</title>
     <titleColor>#000000</titleColor>
