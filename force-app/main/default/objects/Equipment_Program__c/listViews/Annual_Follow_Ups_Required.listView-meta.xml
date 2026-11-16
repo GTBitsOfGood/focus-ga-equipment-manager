@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Annual_Follow_Ups_Required</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Annual_Follow_Up_Status__c</field>
+        <operation>equals</operation>
+        <value>Follow-Up Required</value>
+    </filters>
+    <label>Annual Follow-Ups Required</label>
+</ListView>

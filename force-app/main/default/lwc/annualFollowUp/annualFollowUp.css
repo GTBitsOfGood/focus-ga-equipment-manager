@@ -1,0 +1,153 @@
+:host {
+    display: block;
+}
+
+.card {
+    padding: 14px;
+    background: #ffffff;
+    border: 1px solid #c9c9c9;
+    border-radius: 16px;
+    color: #303030;
+    font-family: Arial, sans-serif;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.card-header h2 {
+    margin: 0;
+    color: #002663;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+lightning-icon {
+    flex-shrink: 0;
+    --slds-c-icon-color-foreground-default: #606060;
+}
+
+.reminder {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid;
+    border-radius: 9px;
+}
+
+.reminder_soon {
+    background: #fff5df;
+    border-color: #ffbc00;
+}
+
+.reminder_due {
+    background: #fff1ee;
+    border-color: #ea001e;
+}
+
+.reminder-title {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.reminder-date {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-top: 2px;
+    color: #606060;
+    font-size: 12px;
+}
+
+.history h3 {
+    margin: 0 0 8px;
+    color: #606060;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.history-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.history-entry {
+    padding: 0 0 12px;
+}
+
+.history-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    color: #505050;
+    font-size: 12px;
+}
+
+.history-row > span {
+    overflow-wrap: anywhere;
+}
+
+.history-row lightning-formatted-date-time {
+    flex-shrink: 0;
+}
+
+.card-footer {
+    margin-top: 4px;
+    padding-top: 14px;
+    border-top: 1px solid #eeeeee;
+}
+
+.start-button {
+    width: 100%;
+    min-height: 38px;
+    padding: 8px 12px;
+    background: #ffffff;
+    border: 1px solid #999999;
+    border-radius: 7px;
+    color: #606060;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: default;
+}
+
+.empty-state {
+    margin: 8px 0 14px;
+    color: #606060;
+    font-size: 12px;
+}
+
+.error {
+    margin: 8px 0 14px;
+    color: #ba0517;
+    font-size: 12px;
+}
+
+.loading {
+    position: relative;
+    min-height: 70px;
+}
+
+.upcoming-details {
+    margin-bottom: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #cccccc;
+    color: #303030;
+    font-size: 12px;
+}
+
+.upcoming-label {
+    margin-bottom: 8px;
+    color: #606060;
+    font-size: 12px;
+    font-weight: 590;
+}

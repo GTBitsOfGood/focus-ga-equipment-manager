@@ -121,6 +121,7 @@
     <tabs>Equipment_Program__c</tabs>
     <tabs>SA_CCOMP__Campaign_Company__c</tabs>
     <tabs>Equipment__c</tabs>
+    <tabs>Equipment_Dashboard</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Programs_UtilityBar</utilityBar>
 </CustomApplication>

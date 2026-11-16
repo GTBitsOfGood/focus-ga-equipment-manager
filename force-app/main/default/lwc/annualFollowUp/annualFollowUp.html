@@ -1,0 +1,123 @@
+<template>
+    <article class="card" aria-label="Annual Check-In">
+        <header class="card-header">
+            <lightning-icon
+                icon-name="utility:clock"
+                size="small"
+                alternative-text="Annual check-in"
+            ></lightning-icon>
+
+            <h2>Annual Check-In</h2>
+        </header>
+
+        <template lwc:if={isLoading}>
+            <div class="loading">
+                <lightning-spinner
+                    alternative-text="Loading follow-up information"
+                    size="small"
+                ></lightning-spinner>
+            </div>
+        </template>
+
+        <template lwc:elseif={hasError}>
+            <p class="error" role="alert">
+                Follow-up information could not be loaded.
+                Refresh the page and check your field access.
+            </p>
+        </template>
+
+        <template lwc:else>
+            <template lwc:if={showReminder}>
+                <div class={reminderClass} role="status">
+                    <lightning-icon
+                        icon-name="utility:event"
+                        size="small"
+                        alternative-text="Follow-up reminder"
+                    ></lightning-icon>
+
+                    <div>
+                        <p class="reminder-title">{reminderTitle}</p>
+
+                        <p class="reminder-date">
+                            <span>Due</span>
+                            <lightning-formatted-date-time
+                                value={nextDate}
+                                year="numeric"
+                                month="short"
+                                day="numeric"
+                                time-zone="UTC"
+                            ></lightning-formatted-date-time>
+                        </p>
+                    </div>
+                </div>
+            </template>
+            <template lwc:if={showUpcomingDetails}>
+                <div class="upcoming-details">
+                    <p class="upcoming-label">Next Check-in</p>
+
+                    <lightning-formatted-date-time
+                        value={nextDate}
+                        year="numeric"
+                        month="long"
+                        day="numeric"
+                        time-zone="UTC"
+                    ></lightning-formatted-date-time>
+                </div>
+            </template>
+            <template lwc:if={isReturned}>
+                <p class="empty-state">
+                    Equipment returned.
+                </p>
+            </template>
+        </template>
+
+        <section class="history" aria-label="Check-in history">
+            <h3>History</h3>
+
+            <template lwc:if={isLoading}>
+                <p class="empty-state">Loading history…</p>
+            </template>
+
+            <template lwc:elseif={hasError}>
+                <p class="error" role="alert">
+                    History could not be loaded.
+                </p>
+            </template>
+
+            <template lwc:elseif={lastDate}>
+                <ul class="history-list">
+                    <li class="history-entry">
+                        <div class="history-row">
+                            <span>Last Year Check-In</span>
+
+                            <lightning-formatted-date-time
+                                value={lastDate}
+                                year="2-digit"
+                                month="2-digit"
+                                day="2-digit"
+                                time-zone="UTC"
+                            ></lightning-formatted-date-time>
+                        </div>
+                    </li>
+                </ul>
+            </template>
+
+            <template lwc:else>
+                <p class="empty-state">
+                    No previous check-in recorded.
+                </p>
+            </template>
+        </section>
+
+        <footer class="card-footer">
+            <button
+                class="start-button"
+                type="button"
+                title="Check-in entry is not enabled yet"
+                disabled
+            >
+                Start Annual Check In
+            </button>
+        </footer>
+    </article>
+</template>
