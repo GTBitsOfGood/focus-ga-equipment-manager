@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Annual_Follow_Up_Cursor__c</fullName>
+    <description>Internal formula that uses the later of the go-live date and the last successful follow-up email date. The next scheduled anniversary must fall after this date. The go live date must be set, if not, this value will be blank</description>
+    <formula>IF(
+ISBLANK($CustomMetadata.Annual_Follow_Up_Setting__mdt.Rollout.Go_Live_Date__c), NULL,
+    IF(
+        Last_Follow_Up_Date__c &gt;
+            $CustomMetadata.Annual_Follow_Up_Setting__mdt.Rollout.Go_Live_Date__c,
+        Last_Follow_Up_Date__c,
+        $CustomMetadata.Annual_Follow_Up_Setting__mdt.Rollout.Go_Live_Date__c
+    )
+)</formula>
+    <label>Annual Follow-Up Cursor</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

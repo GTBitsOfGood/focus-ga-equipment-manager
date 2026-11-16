@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <formula>IF(
     ISBLANK(Next_Follow_Up_Date__c),
-    &quot;&quot;,
+    &quot;Ineligible&quot;,
     IF(
         TODAY() &gt;= Next_Follow_Up_Date__c,
         &quot;Follow-Up Required&quot;,

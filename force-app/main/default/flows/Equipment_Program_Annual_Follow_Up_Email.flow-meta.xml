@@ -123,7 +123,7 @@
         <connector>
             <targetReference>Send_Annual_Follow_Up_Email</targetReference>
         </connector>
-        <filterLogic>1 AND 2 AND 3 AND 4</filterLogic>
+        <filterLogic>1</filterLogic>
         <filters>
             <field>Annual_Follow_Up_Status__c</field>
             <operator>EqualTo</operator>
@@ -131,30 +131,11 @@
                 <stringValue>Follow-Up Required</stringValue>
             </value>
         </filters>
-        <filters>
-            <field>Delivered_Date__c</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Parent_Email__c</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Status__c</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <stringValue>Equipment Returned</stringValue>
-            </value>
-        </filters>
         <object>Equipment_Program__c</object>
         <schedule>
+            <dayOfMonthToRun>0</dayOfMonthToRun>
             <frequency>Daily</frequency>
+            <frequencyNumber>0</frequencyNumber>
             <startDate>2026-11-09</startDate>
             <startTime>11:15:00.000Z</startTime>
         </schedule>
