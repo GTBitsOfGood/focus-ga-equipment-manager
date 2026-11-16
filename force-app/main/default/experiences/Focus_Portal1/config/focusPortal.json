@@ -1,0 +1,18 @@
+{
+  "forgotPasswordRouteId" : "5cf3beca-de99-41a8-bda5-63034abfa849",
+  "isAvailableToGuests" : false,
+  "isFilteredComponentsView" : false,
+  "isProgressiveRenderingEnabled" : false,
+  "loginAppPageId" : "bd26ff9b-67c8-4b3a-89d7-6fb2d4385aa6",
+  "mainAppPageId" : "179dcae3-865b-48b2-95d8-1a7d28289cd8",
+  "preferredDomain" : "none",
+  "selfRegistrationRouteId" : "d6caad16-7256-4876-bb8b-dd79b275628e",
+  "trustedSitesForScript" : [ {
+    "id" : "48db2b8f-d0d5-4d0a-b4ab-991d178aa250",
+    "isActive" : true,
+    "trustedSiteName" : "Website",
+    "trustedSiteUrl" : "https://3212de2efd.nxcli.net",
+    "type" : "trustedSitesForScripts"
+  } ],
+  "type" : "site"
+}

@@ -1,0 +1,188 @@
+{
+  "appPageId" : "179dcae3-865b-48b2-95d8-1a7d28289cd8",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "1344eecf-a0f5-476b-bfe9-5755d6594583",
+  "label" : "Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "displayLogout" : true
+      },
+      "componentName" : "c:responsiveHeader",
+      "id" : "18463ccb-c298-41dd-867a-02968a40f29c",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "richTextValue" : "<p style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-family: sans-serif; font-size: 28px;\">Welcome to the FOCUS Family Portal!</span></p>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "b0496db9-81be-44b8-835b-324863573ea4",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "08379f73-b465-4acc-951e-7bf06d19bcb3",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "tabsetConfig" : {
+          "UUID" : "bb76fdfd-0a06-4f63-8871-4aa992013617",
+          "activeTab" : "",
+          "tabs" : [ {
+            "UUID" : "0647d68f-2b2a-4a8e-8d5a-63fd22a200de",
+            "allowGuestUser" : true,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "1",
+            "tabName" : "Upcoming Focus Events"
+          }, {
+            "UUID" : "abbc4e89-5ae3-4271-9ddc-a2fb4efac600",
+            "allowGuestUser" : true,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "69104",
+            "tabName" : "My Registered Events"
+          }, {
+            "UUID" : "33d69d21-2408-4271-99a3-f53ea5506b7f",
+            "allowGuestUser" : true,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "98b02",
+            "tabName" : "My Waitlisted Events"
+          }, {
+            "UUID" : "d7a8d173-3cbf-4817-80a8-7bba7e498630",
+            "allowGuestUser" : true,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "2",
+            "tabName" : "My Profile"
+          } ],
+          "useOverflowMenu" : false
+        }
+      },
+      "componentName" : "forceCommunity:tabset",
+      "id" : "bb76fdfd-0a06-4f63-8871-4aa992013617",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "flowArguments" : "[]",
+            "flowName" : "Upcoming_Focus_Events"
+          },
+          "componentName" : "forceCommunity:flowCommunity",
+          "id" : "e890813b-07d9-4bdd-b89b-51df2f4a349d",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "0647d68f-2b2a-4a8e-8d5a-63fd22a200de",
+        "regionLabel" : "Upcoming Focus Events",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "flowArguments" : "[]",
+            "flowName" : "My_Registered_Waitlisted_Events"
+          },
+          "componentName" : "forceCommunity:flowCommunity",
+          "id" : "77d46b91-f18f-451d-a86a-d69d6f669194",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "abbc4e89-5ae3-4271-9ddc-a2fb4efac600",
+        "regionLabel" : "My Registered Events",
+        "regionName" : "69104",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "flowArguments" : "[{\"label\":\"Type\",\"dataType\":\"String\",\"supportsRecordId\":false,\"value\":\"Waitlist\"}]",
+            "flowName" : "My_Registered_Waitlisted_Events"
+          },
+          "componentName" : "forceCommunity:flowCommunity",
+          "id" : "1a7f38c5-2027-41dd-ba7d-c94cf6a4ff66",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "33d69d21-2408-4271-99a3-f53ea5506b7f",
+        "regionLabel" : "My Waitlisted Events",
+        "regionName" : "98b02",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "recordId" : "{!CurrentUser.accountId}"
+          },
+          "componentName" : "forceCommunity:recordHeadline",
+          "id" : "2f04041b-b0e4-4ba9-acf8-e0cd1459d0fa",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "detailsTabLabel" : "Details",
+            "discussionsTabLabel" : "Feed",
+            "recordId" : "{!CurrentUser.accountId}",
+            "relatedTabLabel" : "Related",
+            "tab1Type" : "related",
+            "tab2Type" : "none",
+            "tab3Type" : "details",
+            "tab4Type" : "none",
+            "timelineTabLabel" : "Activity"
+          },
+          "componentName" : "forceCommunity:recordHomeTabs",
+          "id" : "9fd44909-9d64-4c80-9d03-f68a0f1502aa",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "d7a8d173-3cbf-4817-80a8-7bba7e498630",
+        "regionLabel" : "My Profile",
+        "regionName" : "2",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "e19f8ed2-215f-4be6-8870-007019eab169",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "fa117c20-fe64-4bbc-8005-6ba764142b49",
+    "regionName" : "sidebar",
+    "type" : "region"
+  }, {
+    "id" : "593c603e-ff75-4cbf-a291-6c097381cb28",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Home"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "6a056567-27cd-464e-a3f8-59830beb061b",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "bc5eeac4-537c-4d98-949a-5f9c315ff4b5",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  }, {
+    "id" : "c9eba3dd-af43-46d3-ad5f-3799182d28d4",
+    "regionName" : "sidebarAlt",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Home",
+  "type" : "view",
+  "viewType" : "home"
+}
