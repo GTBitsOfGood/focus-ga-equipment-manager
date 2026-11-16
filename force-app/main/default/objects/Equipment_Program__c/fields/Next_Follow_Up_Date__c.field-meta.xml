@@ -3,11 +3,54 @@
     <fullName>Next_Follow_Up_Date__c</fullName>
     <description>Date where follow up will be triggered</description>
     <formula>IF(
-    ISBLANK(Delivered_Date__c),
+    OR(
+        ISBLANK(Funds_Released_Date__c),
+        ISBLANK(TRIM(Parent_Email__c)),
+        ISBLANK(Annual_Follow_Up_Cursor__c),
+        CASE(
+            Status__c,
+            &quot;Equipment Returned&quot;, 1,
+            &quot;Pending&quot;, 1,
+            &quot;Denied&quot;, 1,
+            &quot;Withdrawn&quot;, 1,
+            &quot;Funds Expired&quot;, 1,
+            0
+        ) = 1
+    ),
     NULL,
-    ADDMONTHS(
-        BLANKVALUE(Last_Follow_Up_Date__c, Delivered_Date__c),
-        12
+    IF(
+        AND(MONTH(Funds_Released_Date__c) = 2, DAY(Funds_Released_Date__c) = 28),
+        ADDMONTHS(
+            Funds_Released_Date__c - 1,
+            12 * MAX(
+                1,
+                YEAR(Annual_Follow_Up_Cursor__c) - YEAR(Funds_Released_Date__c) +
+                IF(
+                    DATE(YEAR(Annual_Follow_Up_Cursor__c), 2, 28) &lt;=
+                        Annual_Follow_Up_Cursor__c,
+                    1,
+                    0
+                )
+            )
+        ) + 1,
+        ADDMONTHS(
+            Funds_Released_Date__c,
+            12 * MAX(
+                1,
+                YEAR(Annual_Follow_Up_Cursor__c) - YEAR(Funds_Released_Date__c) +
+                IF(
+                    ADDMONTHS(
+                        Funds_Released_Date__c,
+                        12 * (
+                            YEAR(Annual_Follow_Up_Cursor__c) -
+                            YEAR(Funds_Released_Date__c)
+                        )
+                    ) &lt;= Annual_Follow_Up_Cursor__c,
+                    1,
+                    0
+                )
+            )
+        )
     )
 )</formula>
     <label>Next Follow-Up Date</label>

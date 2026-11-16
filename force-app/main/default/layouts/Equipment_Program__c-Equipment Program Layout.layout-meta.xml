@@ -40,6 +40,10 @@
                 <behavior>Edit</behavior>
                 <field>Permission_to_Share_via_Social_Media__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Annual_Follow_Up_Cursor__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
