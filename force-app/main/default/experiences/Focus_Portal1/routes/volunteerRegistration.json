@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "ea347878-5cdc-409b-bc3f-4282f8bb4776",
+  "appPageId" : "179dcae3-865b-48b2-95d8-1a7d28289cd8",
+  "configurationTags" : [ ],
+  "devName" : "volunteer_registration__c",
+  "id" : "11f4c537-edb6-449e-849b-8b4a09f093e6",
+  "label" : "Volunteer Registration",
+  "pageAccess" : "Public",
+  "routeType" : "custom-volunteer-registration",
+  "type" : "route",
+  "urlPrefix" : "volunteer-registration"
+}

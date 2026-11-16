@@ -1,0 +1,186 @@
+{
+  "appPageId" : "179dcae3-865b-48b2-95d8-1a7d28289cd8",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "d044a8e9-db22-49e6-b885-6adc32a28c75",
+  "label" : "Family Portal",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "displayLogout" : true
+      },
+      "componentName" : "c:responsiveHeader",
+      "id" : "7838bc0c-4970-467f-867e-a073e998c558",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "274645d2-40d1-4bef-b203-c1cfaf1ed9bf",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<p style=\"text-align: center;\"><span style=\"font-family: sans-serif; font-size: 28px;\">Welcome to the FOCUS Family Portal!</span></p>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "d63f503d-849a-4796-9868-d020a0096b6b",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "tabsetConfig" : {
+          "UUID" : "35865712-8762-44f4-b243-11efca3551ef",
+          "activeTab" : "",
+          "tabs" : [ {
+            "UUID" : "381f1029-eb32-46c5-b306-137a6c61bcbb",
+            "allowGuestUser" : true,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "1",
+            "tabName" : "Upcoming Focus Events"
+          }, {
+            "UUID" : "e77f78e1-beae-4d91-a29a-06d331425f8e",
+            "allowGuestUser" : true,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "2",
+            "tabName" : "My Registered Events"
+          }, {
+            "UUID" : "bca312c7-6a51-4d78-b618-dd99ec62e7ea",
+            "allowGuestUser" : true,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "3",
+            "tabName" : "My Waitlisted Events"
+          }, {
+            "UUID" : "48bb58c2-7f0b-4c78-8936-73358ff0d2a6",
+            "allowGuestUser" : true,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "00ccf",
+            "tabName" : "My Profile"
+          } ],
+          "useOverflowMenu" : true
+        }
+      },
+      "componentName" : "forceCommunity:tabLayout",
+      "id" : "35865712-8762-44f4-b243-11efca3551ef",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "flowArguments" : "[]",
+            "flowName" : "Upcoming_Focus_Events"
+          },
+          "componentName" : "forceCommunity:flowCommunity",
+          "id" : "175e6552-36a8-4c78-8266-173ef7f082a0",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "381f1029-eb32-46c5-b306-137a6c61bcbb",
+        "regionLabel" : "Upcoming Focus Events",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "flowArguments" : "[]",
+            "flowName" : "My_Registered_Waitlisted_Events"
+          },
+          "componentName" : "forceCommunity:flowCommunity",
+          "id" : "3caffaad-1add-4368-8f7f-17e055a356ea",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "e77f78e1-beae-4d91-a29a-06d331425f8e",
+        "regionLabel" : "My Registered Events",
+        "regionName" : "2",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "flowArguments" : "[]",
+            "flowName" : "My_Registered_Waitlisted_Events"
+          },
+          "componentName" : "forceCommunity:flowCommunity",
+          "id" : "39af0d3c-52b5-42c1-ba84-08ccac683045",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "bca312c7-6a51-4d78-b618-dd99ec62e7ea",
+        "regionLabel" : "My Waitlisted Events",
+        "regionName" : "3",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "recordId" : "{!CurrentUser.accountId}"
+          },
+          "componentName" : "forceCommunity:recordHeadline",
+          "id" : "d8bbfef3-5381-4a5a-af7a-82b092dc7407",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "detailsTabLabel" : "Details",
+            "discussionsTabLabel" : "Feed",
+            "recordId" : "{!CurrentUser.accountId}",
+            "relatedTabLabel" : "Related",
+            "showLegacyActivityComposer" : false,
+            "tab1Type" : "related",
+            "tab2Type" : "none",
+            "tab3Type" : "details",
+            "tab4Type" : "none",
+            "timelineTabLabel" : "Activity"
+          },
+          "componentName" : "forceCommunity:recordHomeTabs",
+          "id" : "fef5df1c-34f0-4316-8634-ddbbfed0e7b3",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "48bb58c2-7f0b-4c78-8936-73358ff0d2a6",
+        "regionLabel" : "My Profile",
+        "regionName" : "00ccf",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "572c4a90-7a26-401c-b1c7-4fcfeda7f885",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "ed87e4a3-c346-40b3-9f2c-c5604b9ca557",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Family Portal"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "8a29552a-91e5-495d-812d-66a62a630d64",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "f31a1c2a-19f8-467a-aa23-fa6fd887344a",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-family"
+}

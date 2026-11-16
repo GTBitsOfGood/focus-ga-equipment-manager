@@ -1,0 +1,62 @@
+{
+  "appPageId" : "179dcae3-865b-48b2-95d8-1a7d28289cd8",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "739a1ab9-a753-49c2-936a-9bc74ab14876",
+  "label" : "Payments",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:customHeader",
+      "id" : "bafb1592-c5e2-4ead-92da-7c6138648ff8",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "72a42908-eccf-4cce-9437-f3b54fe4124c",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "id" : "2648b26f-89a8-4668-bf65-0810a847e40e",
+    "regionName" : "sidebar",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:payPalPayment",
+      "id" : "e68270e7-13f7-45d2-82aa-2036c83895e0",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "261b4fbd-3347-4cfa-9d6a-4ffef8c5508a",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "cb7e3502-67ee-4b97-b342-e704756895c9",
+    "regionName" : "sidebarAlt",
+    "type" : "region"
+  }, {
+    "id" : "1e3a5b26-db33-42a8-975a-408dd32fb14c",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Payments"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "61850199-aaef-4148-af15-5a59d4d34677",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "259ff4e4-4ee5-411c-a31d-84ad369490b9",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-payments"
+}

@@ -1,0 +1,57 @@
+{
+  "appPageId" : "179dcae3-865b-48b2-95d8-1a7d28289cd8",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "ea347878-5cdc-409b-bc3f-4282f8bb4776",
+  "label" : "Volunteer Registration",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:responsiveHeader",
+      "id" : "bab2e1a4-64af-46bc-9725-389373386b9a",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "35e27dab-325c-4026-93ee-9abcfb0bae30",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "flowArguments" : "",
+        "flowName" : "FOCUS_New_Volunteer"
+      },
+      "componentName" : "forceCommunity:flowCommunity",
+      "id" : "17125380-dc55-4716-8885-afb6e776311d",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "827f5d7f-3296-47b7-a943-c95d4e76bd1f",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "d555f98c-833a-4946-bdcc-00822e9a44fe",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Volunteer Registration"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "72404792-6f71-437d-ba37-cbc74d83d96e",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "f7f923c1-a6b8-4df3-8e56-f2251d8b87b8",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-volunteer-registration"
+}

@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "b2457f55-ef9d-44b6-abe7-dc2c6446f5c8",
+  "appPageId" : "179dcae3-865b-48b2-95d8-1a7d28289cd8",
+  "configurationTags" : [ ],
+  "devName" : "Volunteer_Portal_Home__c",
+  "id" : "0420f208-ec6a-4f70-8b18-188c86e6820c",
+  "label" : "Volunteer Portal Home",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-volunteer",
+  "type" : "route",
+  "urlPrefix" : "volunteer"
+}
