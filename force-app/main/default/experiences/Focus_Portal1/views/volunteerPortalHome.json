@@ -1,0 +1,154 @@
+{
+  "appPageId" : "179dcae3-865b-48b2-95d8-1a7d28289cd8",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "b2457f55-ef9d-44b6-abe7-dc2c6446f5c8",
+  "label" : "Volunteer Portal Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "displayLogout" : true
+      },
+      "componentName" : "c:responsiveHeader",
+      "id" : "3245bfd2-7e79-4b31-b418-ad5f4c1fdfef",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "31adf414-c4f6-4eaa-9f4a-cd71f5c61f41",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<p style=\"text-align: center;\"><span style=\"font-family: sans-serif; font-size: 28px;\">Welcome to the FOCUS Volunteer Portal!</span></p>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "596f8bb2-d712-41dc-bdd4-c5313d9d19b3",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "tabsetConfig" : {
+          "UUID" : "8a239a97-4d3b-4668-af68-18ed9a369098",
+          "activeTab" : "",
+          "tabs" : [ {
+            "UUID" : "dd96d5ee-4a9c-4f10-bd16-5a7bfbac1408",
+            "allowGuestUser" : true,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "1",
+            "tabName" : "Upcoming FOCUS Volunteer Events"
+          }, {
+            "UUID" : "efd3dabb-e7fd-4af8-8236-1ded8d19223a",
+            "allowGuestUser" : true,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "2",
+            "tabName" : "My Volunteer Events"
+          }, {
+            "UUID" : "b85a8fab-73ce-4ac2-be41-4df27f752dde",
+            "allowGuestUser" : true,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "3",
+            "tabName" : "My Profile"
+          } ],
+          "useOverflowMenu" : true
+        }
+      },
+      "componentName" : "forceCommunity:tabLayout",
+      "id" : "8a239a97-4d3b-4668-af68-18ed9a369098",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "recordId" : "{!CurrentUser.id}"
+          },
+          "componentName" : "c:backgroundCheckBanner",
+          "id" : "009e9b5e-7886-4320-8e7d-0d97909ef865",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "flowArguments" : "[]",
+            "flowName" : "FOCUS_Volunteer_Upcoming_Unregistered_Events"
+          },
+          "componentName" : "forceCommunity:flowCommunity",
+          "id" : "4b3668bc-03cc-4833-a9a7-969b369a373f",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "dd96d5ee-4a9c-4f10-bd16-5a7bfbac1408",
+        "regionLabel" : "Upcoming FOCUS Volunteer Events",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "flowArguments" : "[]",
+            "flowName" : "FOCUS_Volunteer_Registerd_Waitlisted_Events"
+          },
+          "componentName" : "forceCommunity:flowCommunity",
+          "id" : "0c707721-e64a-41d8-916e-3fdb6d270de3",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "efd3dabb-e7fd-4af8-8236-1ded8d19223a",
+        "regionLabel" : "My Volunteer Events",
+        "regionName" : "2",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "flowArguments" : "",
+            "flowName" : "FOCUS_my_volunteer_profile"
+          },
+          "componentName" : "forceCommunity:flowCommunity",
+          "id" : "56df50d5-9049-45f5-8421-eeda32218aa2",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "b85a8fab-73ce-4ac2-be41-4df27f752dde",
+        "regionLabel" : "My Profile",
+        "regionName" : "3",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "11268ff3-f9dc-4361-9582-940429a4d2e3",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "bcc784a3-ac26-484a-a3c6-4c279a6365b6",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Volunteer Portal Home"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "0314ee45-4b95-46ed-bee5-3c8f2b424099",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "735d2014-ecb6-4098-a185-1e049b802d2b",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-volunteer"
+}

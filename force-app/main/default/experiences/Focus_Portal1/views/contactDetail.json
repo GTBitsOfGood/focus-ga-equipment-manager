@@ -1,0 +1,108 @@
+{
+  "appPageId" : "179dcae3-865b-48b2-95d8-1a7d28289cd8",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "02e2eee1-29a0-41ba-b6f4-038a84c5fbbb",
+  "label" : "Contact Detail",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:customHeader",
+      "id" : "e1ab04cf-6d46-4da1-b35e-976c7180a80f",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "94b1a63a-c928-4f5f-9f2c-52ef7dd37a28",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "tabsetConfig" : {
+          "UUID" : "2f27deb5-67e8-4a32-a202-09f638c6472c",
+          "activeTab" : "",
+          "tabs" : [ {
+            "UUID" : "11a85997-6431-4226-b06c-a3ccc3edb2af",
+            "allowGuestUser" : true,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "1",
+            "tabName" : "Contact"
+          } ],
+          "useOverflowMenu" : false
+        }
+      },
+      "componentName" : "forceCommunity:tabset",
+      "id" : "2f27deb5-67e8-4a32-a202-09f638c6472c",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "recordId" : "{!recordId}"
+          },
+          "componentName" : "forceCommunity:recordHeadline",
+          "id" : "9476f94c-cf57-4dd2-868a-2fa01f707b5a",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "recordId" : "{!recordId}"
+          },
+          "componentName" : "c:manageChildDiagnosis",
+          "id" : "79ecb3ea-ec19-4e3a-9748-3e6a96bd1c83",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "detailsTabLabel" : "Details",
+            "discussionsTabLabel" : "Feed",
+            "recordId" : "{!recordId}",
+            "relatedTabLabel" : "Related",
+            "tab1Type" : "details",
+            "tab2Type" : "none",
+            "tab3Type" : "none",
+            "tab4Type" : "none",
+            "timelineTabLabel" : "Activity"
+          },
+          "componentName" : "forceCommunity:recordHomeTabs",
+          "id" : "01399eb4-e7d1-436b-bb0b-78f4c03fbd95",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "11a85997-6431-4226-b06c-a3ccc3edb2af",
+        "regionLabel" : "Contact",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "57326524-f41c-4368-8afb-0dc84c3d58b0",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "42212c4a-b716-4ec8-ad1a-09cc54bf8ad2",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "{!Record._Object}: {!Record._Title}"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "38818f13-5d4d-4b46-8121-c0032723e811",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "9b3c2cee-ef02-4198-8d08-79b23d276aab",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "detail-003"
+}

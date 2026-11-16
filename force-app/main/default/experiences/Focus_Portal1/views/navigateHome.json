@@ -1,0 +1,77 @@
+{
+  "appPageId" : "179dcae3-865b-48b2-95d8-1a7d28289cd8",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "c04e6673-90fb-47c4-8085-4bd590424c84",
+  "label" : "Navigate Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "displayLogout" : true
+      },
+      "componentName" : "c:responsiveHeader",
+      "id" : "cd84fdbd-2390-4a7b-a98d-0ae004b5fb38",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "f7b0da4c-ffab-4dee-84ba-61b2c4bd4c9d",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<p style=\"text-align: center;\"><span style=\"font-family: sans-serif; font-size: 28px;\">Welcome to the FOCUS Portal!</span></p><p style=\"text-align: center;\"><br></p><p style=\"text-align: center;\"><br></p><p style=\"text-align: center;\"><br></p><p style=\"text-align: center;\"><br></p>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "efc8099c-dc13-414e-b87d-94a293f0119e",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "richTextValue" : "<div style =\"text-align: center;\">\n    <span style =\"width: 300px;\n                 margin: 50px;\">\n        <a href=\"/s/family\">\n  \t\t\t<button style=\"color: #fff;\n                       margin-bottom: 1em;\n                       background-color: #485cc7;\n                       font-weight: 400 !important;\n                       font-size: 22px !important;\n                       line-height: 1.2;\n                       border-style: solid;\n                       order-width: 5px;\n                       border-color: #2ad2c9;\n                       border-radius: 10px;\n                       z-index: 1;\n                       padding: 12px 42px 12px 42px;\">Family Portal Home</button>\n\t\t</a>\n    </span>\n</div>\n<div style = \"text-align: center;\">\n    <span style =\"width: 300px;\n                 margin: 50px;\">\n        <a href=\"/s/volunteer\">\n        <button style=\"color: #fff;\n                       background-color: #485cc7;\n                       font-weight: 400 !important;\n                       font-size: 22px !important;\n                       line-height: 1.2;\n                       border-style: solid;\n                       order-width: 5px;\n                       border-color: #2ad2c9;\n                       border-radius: 10px;\n                       z-index: 2;\n                       padding: 12px 29px 12px 29px;\">Volunteer Portal Home</button>\n        </a>\n    </span>\n</div>"
+      },
+      "componentName" : "forceCommunity:htmlBlock",
+      "id" : "309592e1-59de-4994-a333-3d8114962a9d",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "d7d92906-f34b-4e12-8b0e-55d20484f1a2",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<p style=\"text-align: center;\"><br></p><p style=\"text-align: center;\"><br></p><p style=\"text-align: center;\"><br></p><p style=\"text-align: center;\"><span style=\"font-family: sans-serif; font-size: 28px;\"><span class=\"ql-cursor\">﻿</span></span></p>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "e4927a9f-4bca-4bfa-b798-a97f379c4616",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "eac8316a-b61d-4976-9a25-c17deeddbbee",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Home"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "2c7b89db-4ff8-461f-8fe0-6b813d5d21b5",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "7ea182c5-e1eb-491f-93e9-4397d6adb908",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Home",
+  "type" : "view",
+  "viewType" : "home"
+}

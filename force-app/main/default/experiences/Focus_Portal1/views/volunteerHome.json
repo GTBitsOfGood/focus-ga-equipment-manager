@@ -1,0 +1,154 @@
+{
+  "appPageId" : "179dcae3-865b-48b2-95d8-1a7d28289cd8",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "c74f5759-79fe-4b97-ba88-66c052d68279",
+  "label" : "Volunteer Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "displayLogout" : true
+      },
+      "componentName" : "c:responsiveHeader",
+      "id" : "b0ff5d17-159b-43fb-b14a-8a9824ba416b",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "39375bb2-a37a-4013-8b83-7c8dda78c57a",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<p style=\"text-align: center;\"><span style=\"font-family: sans-serif; font-size: 28px;\">Welcome to the FOCUS Volunteer Portal!</span></p>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "cbf2c8a8-91b1-4f69-9ed8-cb7f8db1ef40",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "tabsetConfig" : {
+          "UUID" : "310379b9-89f7-4bad-b041-d0a67a4d4a37",
+          "activeTab" : "",
+          "tabs" : [ {
+            "UUID" : "2fad1818-a28e-4b0d-91aa-1c9ec388aa91",
+            "allowGuestUser" : true,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "1",
+            "tabName" : "Upcoming FOCUS Volunteer Events"
+          }, {
+            "UUID" : "4c265503-490d-4cc7-b9d7-a81f0749fc83",
+            "allowGuestUser" : true,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "2",
+            "tabName" : "My Volunteer Events"
+          }, {
+            "UUID" : "3ab5fa0d-e540-44ae-9c9f-af4acb536dac",
+            "allowGuestUser" : true,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "3",
+            "tabName" : "My Profile"
+          } ],
+          "useOverflowMenu" : true
+        }
+      },
+      "componentName" : "forceCommunity:tabLayout",
+      "id" : "310379b9-89f7-4bad-b041-d0a67a4d4a37",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "recordId" : "{!CurrentUser.id}"
+          },
+          "componentName" : "c:backgroundCheckBanner",
+          "id" : "811d094e-b536-4aae-a906-265511f8b47f",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "flowArguments" : "[]",
+            "flowName" : "FOCUS_Volunteer_Upcoming_Unregistered_Events"
+          },
+          "componentName" : "forceCommunity:flowCommunity",
+          "id" : "bc2672bc-afa5-4201-8a1b-1cd4033e3381",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "2fad1818-a28e-4b0d-91aa-1c9ec388aa91",
+        "regionLabel" : "Upcoming FOCUS Volunteer Events",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "flowArguments" : "[]",
+            "flowName" : "FOCUS_Volunteer_Registerd_Waitlisted_Events"
+          },
+          "componentName" : "forceCommunity:flowCommunity",
+          "id" : "c549a4e4-a488-4803-98f8-0a9bf86c73de",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "4c265503-490d-4cc7-b9d7-a81f0749fc83",
+        "regionLabel" : "My Volunteer Events",
+        "regionName" : "2",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "flowArguments" : "",
+            "flowName" : "FOCUS_my_volunteer_profile"
+          },
+          "componentName" : "forceCommunity:flowCommunity",
+          "id" : "1a84e32c-c6d7-4608-8856-13b8d23e2fff",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "3ab5fa0d-e540-44ae-9c9f-af4acb536dac",
+        "regionLabel" : "My Profile",
+        "regionName" : "3",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "c366ac00-81de-4631-a1c4-376ef02d7eac",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "e116e957-f407-434a-91df-8cefc43fccc3",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Home"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "9520ad29-8dde-4216-91d8-a205100b8361",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "fdeedf47-6130-4f8a-8b11-7b5a4827a6b7",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Home",
+  "type" : "view",
+  "viewType" : "home"
+}

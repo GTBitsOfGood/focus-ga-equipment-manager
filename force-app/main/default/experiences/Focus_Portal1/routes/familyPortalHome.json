@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "d044a8e9-db22-49e6-b885-6adc32a28c75",
+  "appPageId" : "179dcae3-865b-48b2-95d8-1a7d28289cd8",
+  "configurationTags" : [ ],
+  "devName" : "Family_Portal__c",
+  "id" : "396b8e3a-31a4-4e93-a037-df4f7f978a87",
+  "label" : "Family Portal Home",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-family",
+  "type" : "route",
+  "urlPrefix" : "family"
+}
