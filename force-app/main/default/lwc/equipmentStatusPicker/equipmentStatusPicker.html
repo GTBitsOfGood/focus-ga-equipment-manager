@@ -1,0 +1,28 @@
+<template>
+  <div class="status-picker">
+    <span class={statusIndicatorClass} aria-hidden="true"></span>
+    <div class="status-field slds-select_container">
+      <select
+        class="slds-select"
+        aria-label={accessibleLabel}
+        disabled={isDisabled}
+        required={isRequired}
+        onchange={handleChange}
+        tabindex={internalTabIndex}
+        data-navigation="enable"
+      >
+        <template for:each={options} for:item="option">
+          <option key={option.value} value={option.value} selected={option.selected}>
+            {option.label}
+          </option>
+        </template>
+      </select>
+    </div>
+  </div>
+  <template lwc:if={isSaving}>
+    <span class="slds-text-body_small" role="status">Saving status…</span>
+  </template>
+  <template lwc:if={errorMessage}>
+    <p class="slds-text-color_error slds-text-body_small" role="alert">{errorMessage}</p>
+  </template>
+</template>

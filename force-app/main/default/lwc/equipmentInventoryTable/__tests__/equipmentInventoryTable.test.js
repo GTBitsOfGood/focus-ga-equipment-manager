@@ -49,7 +49,7 @@ describe("c-equipment-inventory-table", () => {
     });
     await Promise.resolve();
 
-    const datatable = element.shadowRoot.querySelector("lightning-datatable");
+    const datatable = element.shadowRoot.querySelector("c-equipment-status-types");
     expect(datatable).not.toBeNull();
     expect(datatable.data).toHaveLength(2);
     expect(datatable.data[0].Name).toBe("Wheelchair");
@@ -80,7 +80,7 @@ describe("c-equipment-inventory-table", () => {
     expect(emptyBox.textContent).toContain(
       "No equipment records match the selected filters."
     );
-    expect(element.shadowRoot.querySelector("lightning-datatable")).toBeNull();
+    expect(element.shadowRoot.querySelector("c-equipment-status-types")).toBeNull();
   });
 
   it("shows an error state when the Apex wire fails and applies sorting metadata correctly", async () => {
@@ -137,7 +137,7 @@ describe("c-equipment-inventory-table", () => {
     });
     await Promise.resolve();
 
-    const datatable = element.shadowRoot.querySelector("lightning-datatable");
+    const datatable = element.shadowRoot.querySelector("c-equipment-status-types");
     expect(datatable.data[0].Status__c).toBe("Out");
     expect(datatable.data[0].statusLabel).toBe("Out In Community");
   });

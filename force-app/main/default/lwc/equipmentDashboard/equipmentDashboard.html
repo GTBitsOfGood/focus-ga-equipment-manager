@@ -9,7 +9,7 @@
     <c-equipment-dashboard-filters onfilterschange={handleFiltersChange}>
     </c-equipment-dashboard-filters>
 
-    <c-equipment-inventory-table filters={filters}>
+    <c-equipment-inventory-table filters={filters} onstatuschanged={handleStatusChanged}>
     </c-equipment-inventory-table>
   </div>
 </template>

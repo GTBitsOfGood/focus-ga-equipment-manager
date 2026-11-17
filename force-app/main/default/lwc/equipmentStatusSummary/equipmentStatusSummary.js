@@ -1,4 +1,5 @@
-import { LightningElement, wire } from "lwc";
+import { LightningElement, api, wire } from "lwc";
+import { refreshApex } from "@salesforce/apex";
 
 import getStatusCounts from "@salesforce/apex/EquipmentStatusController.getStatusCounts";
 
@@ -6,9 +7,17 @@ export default class EquipmentStatusSummary extends LightningElement {
   statuses = [];
   isLoading = true;
   errorMessage;
+  wiredStatusResult;
+
+  @api
+  refresh() {
+    return refreshApex(this.wiredStatusResult);
+  }
 
   @wire(getStatusCounts)
-  wiredStatusCounts({ data, error }) {
+  wiredStatusCounts(result) {
+    this.wiredStatusResult = result;
+    const { data, error } = result;
     if (data) {
       const icons = {
         "Ready for Checkout": {
