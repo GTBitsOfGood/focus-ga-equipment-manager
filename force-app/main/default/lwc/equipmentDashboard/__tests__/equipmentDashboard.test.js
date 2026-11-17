@@ -1,5 +1,7 @@
 import { createElement } from "lwc";
 import EquipmentDashboard from "c/equipmentDashboard";
+import getStatusCounts from "@salesforce/apex/EquipmentStatusController.getStatusCounts";
+import getEquipmentRecords from "@salesforce/apex/EquipmentInventoryController.getEquipmentRecords";
 
 describe("c-equipment-dashboard", () => {
   afterEach(() => {
@@ -8,25 +10,49 @@ describe("c-equipment-dashboard", () => {
     }
   });
 
-  it("renders KPIs, filters, and inventory in the required order", async () => {
+  it("renders KPIs before filters and inventory, keeping counts global when filters change", async () => {
     const element = createElement("c-equipment-dashboard", {
       is: EquipmentDashboard
     });
-
     document.body.appendChild(element);
     await Promise.resolve();
 
-    const children = Array.from(
-      element.shadowRoot.querySelectorAll(
-        "c-equipment-status-summary, c-equipment-dashboard-filters, c-equipment-inventory-table"
+    expect(
+      Array.from(
+        element.shadowRoot.querySelectorAll(
+          "c-equipment-status-summary, c-equipment-dashboard-filters, c-equipment-inventory-table"
+        ),
+        (child) => child.tagName.toLowerCase()
       )
-    ).map((child) => child.tagName.toLowerCase());
-
-    expect(children).toEqual([
+    ).toEqual([
       "c-equipment-status-summary",
       "c-equipment-dashboard-filters",
       "c-equipment-inventory-table"
     ]);
+
+    getStatusCounts.emit([
+      { status: "Out", label: "Out In Community", count: 7 }
+    ]);
+    await Promise.resolve();
+    const summary = element.shadowRoot.querySelector(
+      "c-equipment-status-summary"
+    );
+    const initialConfig = getStatusCounts.getLastConfig();
+    const filters = { searchTerm: "Wheel", status: "Out", size: "", color: "" };
+    element.shadowRoot
+      .querySelector("c-equipment-dashboard-filters")
+      .dispatchEvent(new CustomEvent("filterschange", { detail: filters }));
+    await Promise.resolve();
+    await Promise.resolve();
+
+    expect(getEquipmentRecords.getLastConfig()).toMatchObject(filters);
+    expect(getStatusCounts.getLastConfig()).toEqual(initialConfig);
+    expect(element.shadowRoot.querySelector("c-equipment-status-summary")).toBe(
+      summary
+    );
+    expect(
+      summary.shadowRoot.querySelector(".kpi-count").textContent.trim()
+    ).toBe("7");
   });
 
   it("stores the current filter state and passes it to the inventory table", async () => {

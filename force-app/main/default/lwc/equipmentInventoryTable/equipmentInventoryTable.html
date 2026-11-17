@@ -47,7 +47,7 @@
       </template>
 
       <template if:true={showTable}>
-        <lightning-datatable
+        <c-equipment-status-types
           key-field="Id"
           data={records}
           columns={columns}
@@ -56,7 +56,8 @@
           sorted-by={sortedBy}
           sorted-direction={sortDirection}
           onsort={handleSort}
-        ></lightning-datatable>
+          onstatuschanged={handleStatusChanged}
+        ></c-equipment-status-types>
       </template>
     </div>
   </article>

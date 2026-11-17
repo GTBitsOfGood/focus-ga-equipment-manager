@@ -36,6 +36,18 @@ export default class EquipmentDashboardFilters extends LightningElement {
     this._statusValue = value || "";
   }
 
+  get statusIndicatorClass() {
+    const statusClasses = {
+      "Ready for Checkout": "status-ready",
+      "Checkout Pending": "status-pending",
+      Out: "status-out",
+      Repair: "status-repair",
+      Inactive: "status-inactive"
+    };
+
+    return `status-indicator ${statusClasses[this.statusValue] || "status-all"}`;
+  }
+
   @api
   get sizeValue() {
     return this._sizeValue;
