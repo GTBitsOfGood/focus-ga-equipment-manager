@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>Annual_Follow_Up_Setting__mdt</members>
         <members>Equipment__c</members>
         <members>Equipment_Program__c</members>
         <name>CustomObject</name>
@@ -65,6 +66,20 @@
     <types>
         <members>Equipment_Program__c.Annual_Follow_Ups_Required</members>
         <name>ListView</name>
+    </types>
+    <types>
+        <members>Equipment_Program__c.Annual_Follow_Up_Status__c</members>
+        <members>Equipment_Program__c.Next_Follow_Up_Date__c</members>
+        <members>Equipment_Program__c.Last_Follow_Up_Date__c</members>
+        <members>Equipment_Program__c.Annual_Follow_Up_Cursor__c</members>
+        <members>Equipment_Program__c.Funds_Released_Date__c</members>
+        <members>Equipment_Program__c.Parent_Email__c</members>
+        <members>Annual_Follow_Up_Setting__mdt.Go_Live_Date__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Annual_Follow_Up_Setting.Rollout</members>
+        <name>CustomMetadata</name>
     </types>
     <version>67.0</version>
 </Package>
