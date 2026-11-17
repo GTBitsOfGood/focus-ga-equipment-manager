@@ -21,12 +21,15 @@
         <div
           class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_3-of-12"
         >
-          <lightning-combobox
-            label="Status"
-            value={statusValue}
-            options={statusOptions}
-            onchange={handleStatusChange}
-          ></lightning-combobox>
+          <div class="status-picker">
+            <span class={statusIndicatorClass} aria-hidden="true"></span>
+            <lightning-combobox
+              label="Status"
+              value={statusValue}
+              options={statusOptions}
+              onchange={handleStatusChange}
+            ></lightning-combobox>
+          </div>
         </div>
 
         <!-- Size -->

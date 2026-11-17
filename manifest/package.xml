@@ -49,6 +49,8 @@
         <members>equipmentDashboard</members>
         <members>equipmentDashboardFilters</members>
         <members>equipmentInventoryTable</members>
+        <members>equipmentStatusPicker</members>
+        <members>equipmentStatusTypes</members>
         <members>equipmentStatusSummary</members>
         <name>LightningComponentBundle</name>
     </types>

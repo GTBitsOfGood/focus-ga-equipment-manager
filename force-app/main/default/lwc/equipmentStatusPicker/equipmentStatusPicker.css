@@ -1,0 +1,41 @@
+.status-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-field {
+  flex: 1;
+  min-width: 0;
+}
+
+.status-indicator {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-ready {
+  background-color: #15803d;
+}
+
+.status-pending {
+  background-color: #a16207;
+}
+
+.status-repair {
+  background-color: #dc2626;
+}
+
+.status-out {
+  background-color: #2563eb;
+}
+
+.status-inactive {
+  background-color: #4b5563;
+}
+
+.status-all {
+  background-color: #d1d5db;
+}

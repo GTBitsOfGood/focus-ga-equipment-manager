@@ -1,5 +1,7 @@
 import { LightningElement, api, wire } from "lwc";
 import getEquipmentRecords from "@salesforce/apex/EquipmentInventoryController.getEquipmentRecords";
+import { refreshApex } from "@salesforce/apex";
+import { ShowToastEvent } from "lightning/platformShowToastEvent";
 
 const DEFAULT_SORT_BY = "Name";
 const DEFAULT_SORT_DIRECTION = "asc";
@@ -22,6 +24,7 @@ export default class EquipmentInventoryTable extends LightningElement {
   _sortedBy = DISPLAY_SORT_BY;
   _sortDirection = DEFAULT_SORT_DIRECTION;
   _sortFieldForApex = DEFAULT_SORT_BY;
+  wiredEquipmentResult;
 
   @api
   get filters() {
@@ -103,8 +106,21 @@ export default class EquipmentInventoryTable extends LightningElement {
     pageSize: null,
     pageNumber: null
   })
-  wiredEquipment({ data, error }) {
-    this.handleDataResponse({ data, error });
+  wiredEquipment(result) {
+    this.wiredEquipmentResult = result;
+    this.handleDataResponse(result);
+  }
+
+  async handleStatusChanged() {
+    try {
+      await refreshApex(this.wiredEquipmentResult);
+    } catch {
+      this.dispatchEvent(new ShowToastEvent({
+        title: "Status saved",
+        message: "Unable to refresh inventory. Reload the dashboard to see updated records.",
+        variant: "warning"
+      }));
+    }
   }
 
   beginLoading() {
@@ -157,9 +173,16 @@ export default class EquipmentInventoryTable extends LightningElement {
       { label: "Color", fieldName: "Color__c", type: "text", sortable: true },
       {
         label: "Status",
-        fieldName: "statusLabel",
-        type: "text",
-        sortable: true
+        fieldName: "Status__c",
+        type: "statusPicker",
+        sortable: true,
+        wrapText: true,
+        initialWidth: 260,
+        typeAttributes: {
+          recordId: { fieldName: "Id" },
+          value: { fieldName: "Status__c" },
+          recordName: { fieldName: "Name" }
+        }
       },
       {
         label: "Accessories",
