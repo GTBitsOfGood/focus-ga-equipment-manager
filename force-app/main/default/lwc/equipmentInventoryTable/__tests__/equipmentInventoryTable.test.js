@@ -49,13 +49,26 @@ describe("c-equipment-inventory-table", () => {
     });
     await Promise.resolve();
 
-    const datatable = element.shadowRoot.querySelector("c-equipment-status-types");
+    const datatable = element.shadowRoot.querySelector(
+      "c-equipment-status-types"
+    );
     expect(datatable).not.toBeNull();
     expect(datatable.data).toHaveLength(2);
     expect(datatable.data[0].Name).toBe("Wheelchair");
     expect(datatable.data[0].recordUrl).toBe(
       "/lightning/r/Equipment__c/a00123456789ABC/view"
     );
+    expect(datatable.data[0].loanHistoryUrl).toBe(
+      "/lightning/n/Equipment_Loan_History?c__equipmentId=a00123456789ABC"
+    );
+    expect(
+      datatable.columns.find((column) => column.fieldName === "loanHistoryUrl")
+    ).toMatchObject({
+      label: "Equipment Loan History",
+      type: "url",
+      sortable: false,
+      typeAttributes: { label: "View Loan History", target: "_self" }
+    });
     expect(datatable.data[1].statusLabel).toBe("Checked Out");
     expect(element.totalCount).toBe(2);
     expect(element.shadowRoot.querySelector(".slds-theme_error")).toBeNull();
@@ -80,7 +93,9 @@ describe("c-equipment-inventory-table", () => {
     expect(emptyBox.textContent).toContain(
       "No equipment records match the selected filters."
     );
-    expect(element.shadowRoot.querySelector("c-equipment-status-types")).toBeNull();
+    expect(
+      element.shadowRoot.querySelector("c-equipment-status-types")
+    ).toBeNull();
   });
 
   it("shows an error state when the Apex wire fails and applies sorting metadata correctly", async () => {
@@ -137,7 +152,9 @@ describe("c-equipment-inventory-table", () => {
     });
     await Promise.resolve();
 
-    const datatable = element.shadowRoot.querySelector("c-equipment-status-types");
+    const datatable = element.shadowRoot.querySelector(
+      "c-equipment-status-types"
+    );
     expect(datatable.data[0].Status__c).toBe("Out");
     expect(datatable.data[0].statusLabel).toBe("Out In Community");
   });
