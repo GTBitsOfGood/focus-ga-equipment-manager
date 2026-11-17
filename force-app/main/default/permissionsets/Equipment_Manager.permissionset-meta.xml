@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <classAccesses>
         <apexClass>EquipmentInventoryController</apexClass>
@@ -8,6 +8,11 @@
         <apexClass>EquipmentStatusController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Equipment_Program__c.Last_Follow_Up_Error__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>Equipment_Program__c.Annual_Follow_Up_Status__c</field>
