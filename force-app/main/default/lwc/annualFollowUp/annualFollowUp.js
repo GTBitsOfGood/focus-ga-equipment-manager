@@ -7,6 +7,8 @@ import LAST_DATE from "@salesforce/schema/Equipment_Program__c.Last_Follow_Up_Da
 
 export default class AnnualFollowUp extends LightningElement {
   @api recordId;
+  // Retained for existing Lightning pages; scheduling uses the formula fields.
+  @api reminderDays = 30;
 
   @wire(getRecord, {
     recordId: "$recordId",

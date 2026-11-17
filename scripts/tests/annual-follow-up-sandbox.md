@@ -13,6 +13,8 @@ Run `AnnualFollowUpFormulaTest` in Salesforce after deploying its metadata depen
 
 The Python checks inspect the actual flow graph, email settings, metadata, and permissions. They verify that the success path records the send date and clears the previous error, while the failure path records the fault without changing the send date. They do not execute an email or establish successful delivery.
 
+The component retains the unused `reminderDays` public property and metadata declaration so existing Lightning pages can be upgraded without first removing the component. Scheduling uses the formula fields; remove this legacy property later through a separate page migration.
+
 ## Sandbox checks
 
 Keep the committed flow in Draft. Do not activate it in production for this ticket. Organization-wide sender verification is an activation prerequisite and is outside this ticket's scope. The development sandbox also reports an invalid Automated Process User Email Address; its administrator must resolve that setting before actual send verification. This change does not modify either email setting.
