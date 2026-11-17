@@ -40,6 +40,13 @@
         <name>PermissionSet</name>
     </types>
     <types>
+        <members>Admin</members>
+        <members>FOCUS Standard User</members>
+        <members>Executive Management</members>
+        <members>Finance</members>
+        <name>Profile</name>
+    </types>
+    <types>
         <members>EquipmentInventoryController</members>
         <members>EquipmentInventoryControllerTest</members>
         <members>EquipmentStatusController</members>
