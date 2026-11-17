@@ -95,13 +95,19 @@ class AnnualFollowUpMetadataTest(unittest.TestCase):
         layout = read(SOURCE / "layouts/Equipment_Program__c-Equipment Program Layout.layout-meta.xml")
         self.assertIn("Last_Follow_Up_Error__c", [node.text for node in layout.findall(".//m:field", NS)])
 
-    def test_record_page_has_component_without_unused_reminder_setting(self):
+    def test_record_page_has_component_with_legacy_property_compatibility(self):
         page = read(SOURCE / "flexipages/Equipment_Program_Record_Page.flexipage-meta.xml")
         self.assertIn("annualFollowUp", [node.text for node in page.findall(".//m:componentName", NS)])
         self.assertNotIn("reminderDays", ET.tostring(page, encoding="unicode"))
         bundle = SOURCE / "lwc/annualFollowUp"
-        for file in ("annualFollowUp.js", "annualFollowUp.js-meta.xml"):
-            self.assertNotIn("reminderDays", (bundle / file).read_text())
+        metadata = read(bundle / "annualFollowUp.js-meta.xml")
+        properties = metadata.findall(".//m:property[@name='reminderDays']", NS)
+        self.assertEqual(len(properties), 1)
+        self.assertEqual(properties[0].get("type"), "Integer")
+        self.assertEqual(properties[0].get("default"), "30")
+        source = (bundle / "annualFollowUp.js").read_text()
+        self.assertIn("@api reminderDays = 30;", source)
+        self.assertEqual(source.count("reminderDays"), 1)
 
 
 if __name__ == "__main__":

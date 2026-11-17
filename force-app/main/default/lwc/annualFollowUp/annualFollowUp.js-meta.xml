@@ -11,6 +11,15 @@
             <objects>
                 <object>Equipment_Program__c</object>
             </objects>
+            <!-- Retained for compatibility with existing Lightning pages. -->
+            <property
+                name="reminderDays"
+                type="Integer"
+                label="Days before follow-up to show reminder"
+                default="30"
+                min="1"
+                max="365"
+            />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>
