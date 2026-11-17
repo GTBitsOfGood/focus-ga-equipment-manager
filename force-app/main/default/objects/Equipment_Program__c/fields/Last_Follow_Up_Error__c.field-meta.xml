@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Follow_Up_Error__c</fullName>
+    <description
+  >Most recent annual email action failure. A successful annual email clears this message. Failures do not change Last Follow-Up Date.</description>
+    <label>Last Follow-Up Error</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>
