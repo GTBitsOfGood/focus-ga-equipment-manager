@@ -17,6 +17,8 @@ The component retains the unused `reminderDays` public property and metadata dec
 
 ## Sandbox checks
 
+The deployment manifest includes focused profile metadata granting read access to the three check-in fields for System Administrator (`Admin`), FOCUS Standard User, Executive Management, and Finance. These profile files contain only those field permissions; they do not export unrelated profile settings. Users on these profiles do not need an additional permission-set assignment to view Annual Check-In. The existing Equipment Manager permission set also retains its field grants.
+
 Keep the committed flow in Draft. Do not activate it in production for this ticket. Organization-wide sender verification is an activation prerequisite and is outside this ticket's scope. The development sandbox also reports an invalid Automated Process User Email Address; its administrator must resolve that setting before actual send verification. This change does not modify either email setting.
 
 Use sandbox-only Equipment Programs with parent addresses controlled by the tester. Preserve the existing Rollout configuration before testing; the committed cutoff is intentionally blank and disables scheduling until configured. Do not change the cutoff of an active automation just to test it.
