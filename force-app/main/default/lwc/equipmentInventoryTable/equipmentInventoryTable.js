@@ -6,6 +6,7 @@ import { ShowToastEvent } from "lightning/platformShowToastEvent";
 const DEFAULT_SORT_BY = "Name";
 const DEFAULT_SORT_DIRECTION = "asc";
 const DISPLAY_SORT_BY = "recordUrl";
+const LOAN_HISTORY_TAB_URL = "/lightning/n/Equipment_Loan_History";
 const STATUS_LABELS = {
   Out: "Out In Community"
 };
@@ -115,11 +116,14 @@ export default class EquipmentInventoryTable extends LightningElement {
     try {
       await refreshApex(this.wiredEquipmentResult);
     } catch {
-      this.dispatchEvent(new ShowToastEvent({
-        title: "Status saved",
-        message: "Unable to refresh inventory. Reload the dashboard to see updated records.",
-        variant: "warning"
-      }));
+      this.dispatchEvent(
+        new ShowToastEvent({
+          title: "Status saved",
+          message:
+            "Unable to refresh inventory. Reload the dashboard to see updated records.",
+          variant: "warning"
+        })
+      );
     }
   }
 
@@ -136,6 +140,7 @@ export default class EquipmentInventoryTable extends LightningElement {
       this._records = (data.records || []).map((record) => ({
         ...record,
         recordUrl: `/lightning/r/Equipment__c/${record.Id}/view`,
+        loanHistoryUrl: `${LOAN_HISTORY_TAB_URL}?c__equipmentId=${record.Id}`,
         statusLabel: STATUS_LABELS[record.Status__c] || record.Status__c
       }));
       this._totalCount = data.totalCount || 0;
@@ -201,6 +206,17 @@ export default class EquipmentInventoryTable extends LightningElement {
         fieldName: "Purchase_Price__c",
         type: "currency",
         sortable: true
+      },
+      {
+        label: "Equipment Loan History",
+        fieldName: "loanHistoryUrl",
+        type: "url",
+        sortable: false,
+        wrapText: true,
+        typeAttributes: {
+          label: "View Loan History",
+          target: "_self"
+        }
       }
     ];
   }

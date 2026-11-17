@@ -9,6 +9,7 @@
     <types>
         <members>Equipment__c</members>
         <members>Equipment_Dashboard</members>
+        <members>Equipment_Loan_History</members>
         <name>CustomTab</name>
     </types>
     <types>
@@ -52,6 +53,8 @@
         <members>EquipmentStatusController</members>
         <members>EquipmentStatusControllerTest</members>
         <members>AnnualFollowUpFormulaTest</members>
+        <members>LoanHistoryController</members>
+        <members>LoanHistoryControllerTest</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -59,6 +62,7 @@
         <members>equipmentDashboard</members>
         <members>equipmentDashboardFilters</members>
         <members>equipmentInventoryTable</members>
+        <members>equipmentLoanHistory</members>
         <members>equipmentStatusPicker</members>
         <members>equipmentStatusTypes</members>
         <members>equipmentStatusSummary</members>
