@@ -43,14 +43,21 @@
             <name>emailSubject</name>
             <value>
                 <inputConfiguratorMode>Resource</inputConfiguratorMode>
-                <stringValue>	FOCUS annual equipment check-in</stringValue>
+                <stringValue>FOCUS annual equipment Check-In</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
             <name>emailBody</name>
             <value>
                 <inputConfiguratorMode>Custom</inputConfiguratorMode>
-                <stringValue>This is a sandbox annual equipment follow-up test.</stringValue>
+                <stringValue>&lt;p&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;Hello {!$Record.Parent__r.FirstName}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;It’s time for your annual FOCUS check-in. Is your family still using the equipment you received through our program?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Please contact us with your plans for the equipment and let us know if you have any questions.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Thank you, &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;FOCUS Team&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;﻿&lt;/span&gt;&lt;img src=&quot;https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiMxsUExu9oNwWeHExaAP7QpHzP55sB1WjF99y8vSeWg&amp;amp;s=10&quot; width=&quot;200&quot; alt=&quot;FOCUS logo&quot;&gt;&lt;/p&gt;</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
             </value>
         </inputParameters>
         <inputParameters>
